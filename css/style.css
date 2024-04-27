@@ -1,0 +1,153 @@
+/**********************************************************
+  Add Google Fonts
+**********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,400');
+
+
+/**********************************************************
+  Reset Default Properties Start
+**********************************************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.288) inset;
+  background-color: var(--white);
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--headBg);
+  border-radius: 7rem;
+}
+
+html {
+    font-size: 62.5%;
+    /* Now 1rem = 10px */
+    overflow-x: hidden;
+}
+
+
+/**********************************************************
+  Reset Default Properties End
+**********************************************************/
+
+
+/**********************************************************
+  Variables Start
+**********************************************************/
+:root {
+
+    /* Theme Colors */
+    --black: #000;
+    --white: #fff;
+    --headBg: rgb(233, 0, 0);
+
+    /* Theme Fonts */
+    --font-family-1: 'Poppins', sans-serif;
+}
+
+/**********************************************************
+  Variables End
+**********************************************************/
+
+
+/**********************************************************
+  Wrapper Start
+**********************************************************/
+.wrapper {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+    padding-block: calc((100vw - 80%)/2);
+    font-family: var(--font-family-1);
+}
+
+/**********************************************************
+  Wrapper End
+**********************************************************/
+
+
+/**********************************************************
+  Main Table Start
+**********************************************************/
+#main-table {
+    border: 3px solid var(--white);
+    width: 80%;
+    border-spacing: 1rem;
+    margin-inline: auto;
+    text-transform: uppercase;
+    background-color: var(--black);
+    table-layout: fixed;
+}
+
+#main-table th {
+    color: var(--white);
+    font-family: var(--font-family-1);
+}
+
+
+/**********************************************************
+  Main Table First Th (Year)
+**********************************************************/
+#main-table>thead tr th {
+    font-size: 10rem;
+    letter-spacing: 8px;
+    border: 3px solid var(--white);
+    background-color: var(--headBg);
+}
+
+
+/**********************************************************
+  Inner Table (Months)
+**********************************************************/
+#main-table .inner-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid var(--white);
+    table-layout: fixed;
+}
+
+
+/**********************************************************
+  Inner Table - Month Names Th
+**********************************************************/
+.inner-table tr:nth-child(1) th {
+    height: 5rem;
+    font-size: 2rem;
+    border: 3px solid var(--white);
+    background-color: var(--headBg);
+    border-bottom: none;
+}
+
+/**********************************************************
+  Inner Table - Week Names Th 
+**********************************************************/
+.inner-table tr:nth-child(2) th {
+    font-size: 1.2rem;
+    height: 3.2rem;
+    background-color: var(--black);
+}
+
+#main-table .inner-table td {
+    padding: 1rem;
+    background-color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid var(--black);
+    color: var(--black);
+    text-align: center;
+
+    font-family: var(--font-family-2);
+}
+
+/**********************************************************
+  Main Table End
+**********************************************************/
