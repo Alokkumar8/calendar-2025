@@ -1,1426 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <!-------------------------------------------------
-       Title
-    -------------------------------------------------->
-    <title>Calender Using Tables</title>
-
-
-    <!---------------------------------------------------
-       Link External Custom Style Sheets
-    ----------------------------------------------------->
-    <link rel="stylesheet" href="css/style.css">
-
-
-
+    <title>Calendar for Year 2025 (India)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ad-space {
+            width: 15%;
+            background-color: #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+            min-height: 600px;
+        }
+        .calendar {
+            flex: 0 0 70%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .months {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .month {
+            width: 32%;
+            margin-bottom: 20px;
+            min-width: 250px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .holiday {
+            background-color: #ffcccc;
+        }
+        .observance {
+            background-color: #ccffcc;
+        }
+        .legend {
+            margin-top: 20px;
+            font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            width: 33.33%;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .logo {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            .ad-space {
+                width: 100%;
+                min-height: 100px;
+                margin-bottom: 20px;
+            }
+            .calendar {
+                width: 100%;
+            }
+            .month {
+                width: 100%;
+            }
+            .legend-item {
+                width: 50%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-
-    <!-------------------------------------------------
-       Wrapper Start
-    -------------------------------------------------->
-    <div class="wrapper">
-
-
-        <!-------------------------------------------------
-          Main Table Start
-        -------------------------------------------------->
-        <table id="main-table">
-
-            <!------------- Year ------------>
-            <thead>
-                <tr height="200">
-                    <th colspan="4">2023</th>
-                </tr>
-            </thead>
-
-            <!------------- Months -------------->
-            <tbody>
-
-                <!------------- First Row Start (Jan,Feb,Mar,Apr) ------------->
-                <tr>
-
-                    <!------------- January Month Start ------------->
-                    <td>
-
-                        <!------------- January Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- January Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        JANUARY
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- January Table End ------------->
-                    </td>
-                    <!------------- January Month End ------------->
-
-
-                    <!------------- February Month Start ------------->
-                    <td>
-
-                        <!------------- February Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- February Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        February
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- February Table End ------------->
-                    </td>
-                    <!------------- February Month End ------------->
-
-                    <!------------- March Month Start ------------->
-                    <td>
-
-                        <!------------- March Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- March Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        March
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- March Table End ------------->
-                    </td>
-                    <!------------- March Month End ------------->
-
-                    <!------------- January Month Start ------------->
-                    <td>
-
-                        <!------------- April Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- April Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        April
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- April Table End ------------->
-                    </td>
-                    <!------------- April Month End ------------->
-
-                </tr>
-                <!------------- First Row End (Jan,Feb,Mar,Apr) ------------->
-
-
-                <!------------- Second Row Start (May,Jun,Jul,Aug) ------------->
-                <tr>
-
-                    <!------------- May Month Start ------------->
-                    <td>
-
-                        <!------------- May Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- May Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        May
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- May Table End ------------->
-                    </td>
-                    <!------------- May Month End ------------->
-
-                    <!------------- June Month Start ------------->
-                    <td>
-
-                        <!------------- June Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- June Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        June
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- June Table End ------------->
-                    </td>
-                    <!------------- June Month End ------------->
-
-                    <!------------- July Month Start ------------->
-                    <td>
-
-                        <!------------- July Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- July Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        July
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- July Table End ------------->
-                    </td>
-                    <!------------- July Month End ------------->
-
-                    <!------------- January Month Start ------------->
-                    <td>
-
-                        <!------------- August Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- August Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        August
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- August Table End ------------->
-                    </td>
-                    <!------------- August Month End ------------->
-
-                </tr>
-                <!------------- Second Row End (May,Jun,Jul,Aug) ------------->
-
-
-                <!------------- Third Row Start (Sep,Oct,Nov,Dec) ------------->
-                <tr>
-
-                    <!------------- September Month Start ------------->
-                    <td>
-
-                        <!------------- September Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- September Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        September
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- September Table End ------------->
-                    </td>
-                    <!------------- September Month End ------------->
-
-                    <!------------- October Month Start ------------->
-                    <td>
-
-                        <!------------- October Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- October Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        October
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- October Table End ------------->
-                    </td>
-                    <!------------- October Month End ------------->
-
-                    <!------------- November Month Start ------------->
-                    <td>
-
-                        <!------------- November Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- November Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        November
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- November Table End ------------->
-                    </td>
-                    <!------------- November Month End ------------->
-
-                    <!------------- December Month Start ------------->
-                    <td>
-
-                        <!------------- December Table Start ------------->
-                        <table class="inner-table">
-
-                            <thead>
-
-                                <!----------- December Heading ----------->
-                                <tr>
-                                    <th colspan="7">
-                                        December
-                                    </th>
-                                </tr>
-
-                                <!----------- Week Names ----------->
-                                <tr>
-                                    <th>
-                                        MON
-                                    </th>
-                                    <th>
-                                        TUE
-                                    </th>
-                                    <th>
-                                        WED
-                                    </th>
-                                    <th>
-                                        THR
-                                    </th>
-                                    <th>
-                                        FRI
-                                    </th>
-                                    <th>
-                                        SAT
-                                    </th>
-                                    <th>
-                                        SUN
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <!----------- DATES ----------->
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!------------- December Table End ------------->
-                    </td>
-                    <!------------- December Month End ------------->
-
-                </tr>
-                <!------------- Third Row End (Sep,Oct,Nov,Dec) ------------->
-
-            </tbody>
-
-        </table>
-        <!--------- Table End ---------->
-
+    <div class="container">
+        <div class="ad-space">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
+                <p>Banner Ad Space<br>(15% width)</p>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="logo">timeanddate</div>
+            <h1>Calendar for Year 2025 (India)</h1>
+            <div class="months">
+                <div class="month">
+                    <h2>January</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td class="holiday">1</td><td class="holiday">2</td><td>3</td><td>4</td></tr>
+                        <tr><td>5</td><td class="holiday">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                        <tr><td>12</td><td class="holiday">13</td><td class="holiday">14</td><td class="holiday">15</td><td>16</td><td>17</td><td>18</td></tr>
+                        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+                        <tr><td class="holiday">26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>February</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td class="holiday">2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td class="holiday">9</td><td>10</td><td>11</td><td class="holiday">12</td><td>13</td><td class="observance">14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td class="holiday">19</td><td>20</td><td>21</td><td>22</td></tr>
+                        <tr><td class="holiday">23</td><td>24</td><td>25</td><td class="holiday">26</td><td>27</td><td>28</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>March</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td class="holiday">2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td class="holiday">13</td><td class="holiday">14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td class="holiday">21</td><td>22</td></tr>
+                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td class="holiday">28</td><td>29</td></tr>
+                        <tr><td class="holiday">30</td><td class="holiday">31</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>April</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td>1</td><td>2</td><td class="holiday">3</td><td>4</td><td>5</td></tr>
+                        <tr><td class="holiday">6</td><td>7</td><td>8</td><td>9</td><td class="holiday">10</td><td class="holiday">11</td><td>12</td></tr>
+                        <tr><td class="holiday">13</td><td class="holiday">14</td><td class="holiday">15</td><td>16</td><td class="holiday">17</td><td class="holiday">18</td><td>19</td></tr>
+                        <tr><td class="holiday">20</td><td>21</td><td>22</td><td>23</td><td>24</td><td class="holiday">25</td><td>26</td></tr>
+                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>May</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td class="holiday">1</td><td>2</td><td>3</td></tr>
+                        <tr><td>4</td><td class="holiday">5</td><td>6</td><td>7</td><td>8</td><td class="holiday">9</td><td>10</td></tr>
+                        <tr><td class="observance">11</td><td class="holiday">12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>June</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td class="observance">7</td></tr>
+                        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                        <tr><td>15</td><td class="holiday">16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+                        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td class="observance">27</td><td>28</td></tr>
+                        <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>July</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                        <tr><td class="observance">6</td><td>7</td><td>8</td><td>9</td><td class="observance">10</td><td>11</td><td>12</td></tr>
+                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>August</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+                        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td class="observance">9</td></tr>
+                        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td class="holiday">15</td><td class="observance">16</td></tr>
+                        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                        <tr><td>24</td><td>25</td><td>26</td><td class="observance">27</td><td>28</td><td>29</td><td>30</td></tr>
+                        <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>September</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td class="observance">5</td><td>6</td></tr>
+                        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+                        <tr><td>28</td><td class="observance">29</td><td class="observance">30</td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>October</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td class="holiday">1</td><td class="holiday">2</td><td>3</td><td>4</td></tr>
+                        <tr><td>5</td><td>6</td><td class="observance">7</td><td>8</td><td>9</td><td class="holiday">10</td><td>11</td></tr>
+                        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                        <tr><td>19</td><td class="observance">20</td><td class="observance">21</td><td class="observance">22</td><td class="observance">23</td><td>24</td><td>25</td></tr>
+                        <tr><td>26</td><td>27</td><td class="observance">28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>November</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td>2</td><td>3</td><td>4</td><td class="observance">5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+                        <tr><td>23</td><td class="observance">24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+                        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>December</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                        <tr><td>21</td><td>22</td><td>23</td><td class="holiday">24</td><td class="holiday">25</td><td>26</td><td>27</td></tr>
+                        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="legend">
+                <h3>Holidays & Observances</h3>
+                <div class="legend-item"><span class="legend-color" style="background-color: #ffcccc;"></span> Public Holiday</div>
+                <div class="legend-item"><span class="legend-color" style="background-color: #ccffcc;"></span> Observance</div>
+                <div class="legend-item">1 Jan • New Year's Day</div>
+                <div class="legend-item">2 Jan • Last day of Hanukkah</div>
+                <div class="legend-item">6 Jan • Guru Govind Singh Jayanti</div>
+                <div class="legend-item">13 Jan • Lohri</div>
+                <div class="legend-item">14 Jan • Makar Sankranti</div>
+                <div class="legend-item">15 Jan • Pongal</div>
+                <div class="legend-item">26 Jan • Republic Day</div>
+                <div class="legend-item">2 Feb • Vasant Panchami</div>
+                <div class="legend-item">9 Feb • Guru Ravidas Jayanti</div>
+                <div class="legend-item">14 Feb • Valentine's Day</div>
+                <div class="legend-item">19 Feb • Shivaji Jayanti</div>
+                <div class="legend-item">23 Feb • Maharishi Dayanand Saraswati Jayanti</div>
+                <div class="legend-item">26 Feb • Maha Shivaratri/Shivaratri</div>
+                <div class="legend-item">2 Mar • Ramadan Start</div>
+                <div class="legend-item">13 Mar • Holika Dahana</div>
+                <div class="legend-item">14 Mar • Holi</div>
+                <div class="legend-item">21 Mar • Chaitra Sukhladi</div>
+                <div class="legend-item">28 Mar • Rama Navami</div>
+                <div class="legend-item">30 Mar • Mahavir Jayanti</div>
+                <div class="legend-item">31 Mar • Easter Sunday</div>
+                <div class="legend-item">3 Apr • Maundy Thursday</div>
+                <div class="legend-item">6 Apr • Ramzan Id/Eid-ul-Fitar</div>
+                <div class="legend-item">10 Apr • Mahavir Jayanti</div>
+                <div class="legend-item">11 Apr • Good Friday</div>
+                <div class="legend-item">13 Apr • Vaisakhi</div>
+                <div class="legend-item">14 Apr • Ambedkar Jayanti</div>
+                <div class="legend-item">15 Apr • Mesadi / Vaisakhadi</div>
+                <div class="legend-item">17 Apr • Mahavir Jayanti</div>
+                <div class="legend-item">18 Apr • Good Friday</div>
+                <div class="legend-item">20 Apr • Easter Day</div>
+                <div class="legend-item">25 Apr • Anzac Day</div>
+                <div class="legend-item">1 May • International Worker's Day</div>
+                <div class="legend-item">5 May • Birthday of Rabindranath</div>
+                <div class="legend-item">9 May • Birthday of Rabindranath</div>
+                <div class="legend-item">11 May • Mother's Day</div>
+                <div class="legend-item">12 May • Buddha Purnima/Vesak</div>
+                <div class="legend-item">7 Jun • Father's Day</div>
+                <div class="legend-item">16 Jun • Rath Yatra</div>
+                <div class="legend-item">27 Jun • Rath Yatra</div>
+                <div class="legend-item">6 Jul • Muharram/Ashura</div>
+                <div class="legend-item">10 Jul • Guru Purnima</div>
+                <div class="legend-item">9 Aug • Muharram/Ashura</div>
+                <div class="legend-item">15 Aug • Independence Day</div>
+                <div class="legend-item">16 Aug • Parsi New Year</div>
+                <div class="legend-item">27 Aug • Onam</div>
+                <div class="legend-item">5 Sep • Teacher's Day</div>
+                <div class="legend-item">29 Sep • Navaratri</div>
+                <div class="legend-item">30 Sep • Navaratri</div>
+                <div class="legend-item">1 Oct • Gandhi Jayanti</div>
+                <div class="legend-item">2 Oct • Dussehra</div>
+                <div class="legend-item">7 Oct • Milad un-Nabi/Id-e-Milad</div>
+                <div class="legend-item">10 Oct • Maharishi Valmiki Jayanti</div>
+                <div class="legend-item">20 Oct • Karaka Chaturthi (Karva Chauth)</div>
+                <div class="legend-item">21 Oct • Naraka Chaturdasi</div>
+                <div class="legend-item">22 Oct • Diwali/Deepavali</div>
+                <div class="legend-item">23 Oct • Govardhan Puja</div>
+                <div class="legend-item">28 Oct • Bhai Duj</div>
+                <div class="legend-item">5 Nov • Guru Nanak Jayanti</div>
+                <div class="legend-item">24 Nov • Guru Tegh Bahadur's Martyrdom Day</div>
+                <div class="legend-item">24 Dec • Christmas Eve</div>
+                <div class="legend-item">25 Dec • Christmas</div>
+            </div>
+        </div>
+        <div class="ad-space">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
+                <p>Banner Ad Space<br>(15% width)</p>
+            </div>
+        </div>
     </div>
-    <!-------------------------------------------------
-       Wrapper End
-    -------------------------------------------------->
-
 </body>
-
 </html>
+
