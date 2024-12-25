@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>About Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta
+      content="About the team behind calendar 2025 tool."
+      name="description"
+    />
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto");
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+      }
+      nav {
+        width: 100%;
+        height: 100px;
+        background-color: rgba(51, 51, 51, 0.3);
+        position: absolute;
+        top: 0;
+        z-index: 5;
+      }
+      .header {
+        width: 100%;
+        height: 500px;
+        opacity: 0.8;
+        background-color: rgb(154, 175, 187);
+        background-image: url("https://res.cloudinary.com/arpr/image/upload/v1541394028/architecture-building-campus-207684.jpg");
+        background-size: cover;
+        background-position: bottom;
+      }
+      .container {
+        width: 100%;
+      }
+      .container h1 {
+        font-size: 50px;
+      }
+      .about {
+        padding: 5% 0;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+      }
+      .about .left {
+        padding: 2% 0;
+        float: left;
+        width: 50%;
+        display: inline-block;
+      }
+      .about .right {
+        width: 50%;
+        display: inline-block;
+      }
+      .about .right img {
+        width: 100%;
+      }
+      .about .left h1 {
+        text-align: center;
+        color: #1eadff;
+        margin: 0 0 10px 0;
+      }
+      .about .left hr {
+        width: 20%;
+        border-top: 2px solid #000;
+        border-bottom: none;
+      }
+      .about .left p {
+        font-size: 1rem;
+        margin: 40px auto;
+        width: 80%;
+      }
+
+      .mission {
+        padding: 5% 0;
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+      }
+      .mission .right {
+        padding: 2% 0;
+        width: 50%;
+
+        display: inline-block;
+      }
+      .mission .left {
+        float: left;
+        width: 50%;
+
+        display: inline-block;
+      }
+      .mission .left img {
+        width: 100%;
+      }
+      .mission .right h1 {
+        text-align: center;
+        color: #1eadff;
+        margin: 0 0 20px 0;
+      }
+      .mission .right hr {
+        width: 35%;
+        border-top: 2px solid #000;
+        border-bottom: none;
+      }
+      .mission .right p {
+        font-size: 1rem;
+        margin: 40px auto;
+        width: 80%;
+      }
+
+      .team {
+        width: 90%;
+        margin: auto;
+        padding: 5% 5%;
+        over-flow: hidden;
+      }
+      .team h1 {
+        text-align: center;
+        color: #1eadff;
+      }
+      .team h1 hr {
+        width: 15%;
+        border-top: 2px solid #000;
+        background-color: transperant;
+        border-bottom: none;
+        margin-bottom: 50px;
+      }
+      .team .card {
+        padding-bottom: 20px;
+        padding-top: 20px;
+        position: relative;
+        min-width: 20%;
+        height: 500px !important;
+        height: auto;
+        background-color: #fff;
+        display: inline-block;
+        margin: 40px 6.5%;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+        text-align: center;
+      }
+      .card .circle-container {
+        position: relative;
+        background-color: #579f79;
+        width: 250px;
+        height: 250px;
+        border: none;
+        border-radius: 50%;
+        margin: auto;
+        color: #fff;
+      }
+      .circle-container h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        font-size: 60px;
+      }
+
+      .team .card h2 {
+        text-align: center;
+        margin: 30px 0 0 0;
+      }
+      .team .card h4 {
+        text-align: center;
+        margin: 10px 0 0 0;
+      }
+      .team .card p {
+        width: 250px;
+        margin: 30px auto;
+        text-align: center;
+      }
+      .clear {
+        clear: both;
+      }
+
+      footer {
+        width: 100%;
+        height: 100px;
+        background-color: #bbff00;
+      }
+      footer p {
+        text-align: center;
+        padding: 0 2%;
+      }
+
+      /* media */
+      @media (max-width: 1200px) {
+        .mission .right p {
+          font-size: 0.8rem;
+          margin: 20px auto;
+        }
+        .about .left p {
+          font-size: 0.8rem;
+          margin: 20px auto;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .about .left {
+          width: 100%;
+        }
+        .about .right {
+          width: 100%;
+        }
+        .mission .left {
+          width: 100%;
+        }
+        .mission .right {
+          width: 100%;
+        }
+        .team .card {
+          width: 40%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .team .card {
+          width: 100%;
+        }
+        nav {
+          height: 80px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav></nav>
+    <div class="header"></div>
+
+    <div class="container">
+      <div class="about">
+        <div class="left">
+          <h1>About us</h1>
+          <hr />
+          <p>
+            We are a passionate team of developers dedicated to developing high-quality tools and resources for the online calendars community. Our mission is simple—to offer a wide variety of user-friendly Calendars of year 2025 to streamline seeing calendar of 2025 of different countries.
+          </p>
+
+          <p>
+            Our <a href="https://calendar-2025.org">Calendar 2025</a> provides detailed calendars for the year 2025 across different countries, making it easy to plan and organize events globally. Each calendar is carefully developed in-house, with select features integrating open-source JavaScript components under various licenses. We take pride in the accuracy and reliability of our tools, ensuring that over 90% of the data is based on verified formats and globally recognized standards.
+          </p>
+        </div>
+        <div class="right">
+          <img
+            src="https://res.cloudinary.com/arpr/image/upload/v1540359700/adult-affection-baby-755028.jpg"
+          />
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="mission">
+        <div class="left">
+          <img
+            src="https://res.cloudinary.com/arpr/image/upload/v1540359700/adult-affection-baby-755028.jpg"
+          />
+        </div>
+        <div class="right">
+          <h2>Our Mission</h2>
+          <hr />
+          <p>
+            In line with our dedication to quality, our Calendar 2025 tool undergoes meticulous review by our team of experts. With extensive knowledge of international calendars and holidays, they ensure accurate and reliable displays of the 2025 calendars for different countries to support your global planning needs.
+          </p>
+
+          <p>
+            We take immense pride in creating over 99% of our content in-house to ensure quality and accuracy. For a small portion, we reference reliable sources like Wikipedia, complying with the GNU Free Documentation License. Our Calendar-2025.org tool provides detailed calendars for different countries, meticulously curated and verified to offer accurate and up-to-date information for planning and scheduling.
+          </p>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <div class="team">
+        <h2>
+          Our Team
+          <hr />
+        </h2>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">A</h2>
+          </div>
+          <h2>Arjun</h2>
+          <h4>Technical Lead</h4>
+          <p>
+            Arjun is a skilled tech lead with a passion for coding and
+            problem-solving. With extensive experience, he excels at leading
+            teams and transforming innovative ideas into reality.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">N</h2>
+          </div>
+          <h2>Nisha</h2>
+          <h4>UX Designer</h4>
+          <p>
+            Nisha is a creative designer who loves exploring user-friendly designs
+            and enhancing user experiences. She's always curious about new trends
+            and enjoys collaborating with teams.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">V</h2>
+          </div>
+          <h2>Vikram</h2>
+          <h4>Evangelist</h4>
+          <p>
+            Vikram is passionate about technology and innovation. He enjoys building
+            connections, sharing knowledge, and staying updated with the latest tech trends.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">P</h2>
+          </div>
+          <h2>Pooja</h2>
+          <h4>Backend Developer</h4>
+          <p>
+            Pooja is a dedicated backend developer who thrives on solving complex problems.
+            She loves coding, collaborating with teams, and exploring new technologies.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">K</h2>
+          </div>
+          <h2>Karan</h2>
+          <h4>Advisor</h4>
+          <p>
+            Karan is an insightful advisor who enjoys exploring innovative ideas and providing
+            strategic guidance. He loves engaging with diverse teams and discovering new perspectives.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="circle-container">
+            <h2 style="color: #fff">R</h2>
+          </div>
+          <h2>Rhea</h2>
+          <h4>Intern</h4>
+          <p>
+            Rhea is a creative and enthusiastic intern. She has a passion for design, enjoys learning,
+            and loves collaborating on exciting projects.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <br />
+      <p>Copyright ©2024 Age Calculator. All rights reserved</p>
+    </footer>
+  </body>
+</html>

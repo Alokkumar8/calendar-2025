@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FAQ</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+
+    <meta
+      content="FAQ related to calendar-2025 tool that allows you to see calendars with holidays of different countries"
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link href="favicon.ico" rel="icon" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Hind:300,400&display=swap");
+      * {
+        box-sizing: border-box;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Hind", sans-serif;
+        background: #fff;
+        color: #4d5974;
+        display: flex;
+        min-height: 100vh;
+      }
+      .container {
+        margin: 0 auto;
+        padding: 4rem;
+        width: 48rem;
+      }
+      .accordion .accordion-item {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .accordion .accordion-item button[aria-expanded="true"] {
+        border-bottom: 1px solid #03b5d2;
+      }
+      .accordion button {
+        position: relative;
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 1em 0;
+        color: #7288a2;
+        font-size: 1.15rem;
+        font-weight: 400;
+        border: none;
+        background: none;
+        outline: none;
+      }
+      .accordion button:hover,
+      .accordion button:focus {
+        cursor: pointer;
+        color: #03b5d2;
+      }
+      .accordion button:hover::after,
+      .accordion button:focus::after {
+        cursor: pointer;
+        color: #03b5d2;
+        border: 1px solid #03b5d2;
+      }
+      .accordion button .accordion-title {
+        padding: 1em 1.5em 1em 0;
+      }
+      .accordion button .icon {
+        display: inline-block;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        border: 1px solid;
+        border-radius: 22px;
+      }
+      .accordion button .icon::before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      .accordion button .icon::after {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+      .accordion button[aria-expanded="true"] {
+        color: #03b5d2;
+      }
+      .accordion button[aria-expanded="true"] .icon::after {
+        width: 0;
+      }
+      .accordion button[aria-expanded="true"] + .accordion-content {
+        opacity: 1;
+        max-height: 9em;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 200ms linear, max-height 200ms linear;
+        will-change: opacity, max-height;
+      }
+      .accordion .accordion-content p {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 2em 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="true">
+            <span class="accordion-title"
+              >What is Calendar-2025 tool?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Calendar 2025 shows the calendars of different countries of year 2025. It shows calendars with all major holidays.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="true">
+            <span class="accordion-title">How does Calendar-2025 work?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Calendar 2025 works by showing the user the calendar of his country. It automatically detects the location of the user and shows the calendar of year 2025 with all the holidays of that year for that country.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="true">
+            <span class="accordion-title">Is Calendar 2025 accurate?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, Calendar 2025 is fairly accurate. It shows the gregorian calendar for year 2025. Its robust algorithms leave no room for error, meticulously considering every aspect of calendar.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="true">
+            <span class="accordion-title">Can Calendar-2025 show calendar of other countries?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Absolutely! Calendar 2025 shows calendars of more than 100 countries. You can choose between USA, India, Japan or any other country you want to choose.
+            </p>
+          </div>
+        </div>
+      
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="true">
+            <span class="accordion-title"
+              >Can I see the calendar of some different country?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Certainly! Calendar 2025 extends its functionality beyond just one country, offering the capability to see the calendar of 2025 of any country by simply selecting the country from countries list.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="true">
+            <span class="accordion-title">Is Calendar 2025 free to use?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, Calendar 2025 is entirely free to use, ensuring unrestricted access to its plethora of features without any paywall. Users can utilize its capabilities without limits, making it a useful and valuable tool to see calendar of 2025 of any country including US, India and Japan.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="true">
+            <span class="accordion-title">Is my personal data secure when using Calendar 2025?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Absolutely. Calendar-2025 tool adopts high security measures to safeguard user's privacy and confidentiality. It doesn't store any personal data entered by users, thereby ensuring peace of mind and fostering trust in its usage.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="true">
+            <span class="accordion-title">Can Calendar 2025 be integrated into other applications?</span
+            ><span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, Calendar-2025 offers seamless integration through APIs, thereby facilitating its incorporation into a diverse range of web applications and mobile apps. Please refer to our API documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const items = document.querySelectorAll(".accordion button");
+
+      function toggleAccordion() {
+        const itemToggle = this.getAttribute("aria-expanded");
+
+        for (i = 0; i < items.length; i++) {
+          items[i].setAttribute("aria-expanded", "false");
+        }
+
+        if (itemToggle == "false") {
+          this.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      items.forEach((item) => item.addEventListener("click", toggleAccordion));
+    </script>
+  </body>
+</html>

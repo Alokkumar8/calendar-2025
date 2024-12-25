@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar for Year 2025 (Albania)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: none;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ad-space {
+            width: 15%;
+            background-color: #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #666;
+            min-height: 600px;
+        }
+        .calendar {
+            flex: 0 0 70%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .months {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .month {
+            width: 32%;
+            margin-bottom: 20px;
+            min-width: 250px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: center;
+            padding: 5px;
+            font-size: 12px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .holiday {
+            background-color: #ffcccc;
+        }
+        .observance {
+            background-color: #ccffcc;
+        }
+        .legend {
+            margin-top: 20px;
+            font-size: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            width: 33.33%;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            display: inline-block;
+        }
+        .logo {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+            .ad-space {
+                width: 100%;
+                min-height: 100px;
+                margin-bottom: 20px;
+            }
+            .calendar {
+                width: 100%;
+            }
+            .month {
+                width: 100%;
+            }
+            .legend-item {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ad-space">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
+                <p>Banner Ad Space<br>(15% width)</p>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="logo">timeanddate</div>
+            <h1>Calendar for Year 2025 (Albania)</h1>
+            <div class="months">
+                <div class="month">
+                    <h2>January</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td class="holiday">1</td><td class="holiday">2</td><td>3</td><td>4</td></tr>
+                        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+                        <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>February</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>March</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td class="holiday">14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td class="holiday">22</td></tr>
+                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+                        <tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>April</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                        <tr><td class="holiday">20</td><td class="holiday">21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>May</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td class="holiday">1</td><td>2</td><td>3</td></tr>
+                        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+                        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+                        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+                        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>June</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+                        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+                        <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>July</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td class="holiday">5</td></tr>
+                        <tr><td class="holiday">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>August</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+                        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+                        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+                        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+                        <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+                        <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>September</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+                        <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>October</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                        <tr><td class="holiday">19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+                        <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>November</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td class="holiday">28</td><td class="holiday">29</td></tr>
+                        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+                <div class="month">
+                    <h2>December</h2>
+                    <table>
+                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                        <tr><td>7</td><td class="holiday">8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td class="holiday">25</td><td>26</td><td>27</td></tr>
+                        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
+                    </table>
+                </div>
+            </div>
+            <div class="legend">
+                <h3>Holidays & Observances</h3>
+                <div class="legend-item"><span class="legend-color" style="background-color: #ffcccc;"></span> Public Holiday</div>
+                <div class="legend-item"><span class="legend-color" style="background-color: #ccffcc;"></span> Observance</div>
+                <div class="legend-item">1-2 Jan • New Year's Day</div>
+                <div class="legend-item">14 Mar • Summer Day</div>
+                <div class="legend-item">22 Mar • Nevruz Day</div>
+                <div class="legend-item">20 Apr • Easter Sunday (Orthodox)</div>
+                <div class="legend-item">21 Apr • Easter Monday (Orthodox)</div>
+                <div class="legend-item">1 May • International Workers' Day</div>
+                <div class="legend-item">5-6 Jul • Eid al-Adha (estimated)</div>
+                <div class="legend-item">19 Oct • Mother Teresa Beatification Day</div>
+                <div class="legend-item">28-29 Nov • Independence Day</div>
+                <div class="legend-item">8 Dec • Youth Day</div>
+                <div class="legend-item">25 Dec • Christmas Day</div>
+            </div>
+        </div>
+        <div class="ad-space">
+            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
+                <p>Banner Ad Space<br>(15% width)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
