@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
   // res.send('Hello World!')
 })
 
-app.get('/in', (req, res) => {
+app.get('/in/calendar-2025-india', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'in', 'calendar-2025-india.html'));
 })
 
