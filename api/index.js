@@ -7,12 +7,12 @@ const path = require('path');
 app.use(express.static("public"));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
   // res.send('Hello World!')
 })
 
 app.get('/in', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/calendar-2025-india.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'calendar-2025-india.html'));
 })
 
 app.listen(port, () => {
