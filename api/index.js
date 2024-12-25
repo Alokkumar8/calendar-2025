@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const path = require('path');
 
 
@@ -19,6 +19,6 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.listen(8080, () => console.log("Running on port 8080"));
+app.listen(3000, () => console.log("Running on port 3000"));
 
 module.exports = app;
