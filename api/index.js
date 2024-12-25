@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/in', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'calendar-2025-india.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'in', 'calendar-2025-india.html'));
 })
 
 app.listen(port, () => {
