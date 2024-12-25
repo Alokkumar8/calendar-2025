@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Alok Kumar", 
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Alokkumar8/calendar-2024/issues"
