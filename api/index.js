@@ -8,11 +8,6 @@ app.use(express.static("public"));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-  // res.send('Hello World!')
-})
-
-app.get('/in/calendar-2025-india', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'in', 'calendar-2025-india.html'));
 })
 
 app.listen(port, () => {
