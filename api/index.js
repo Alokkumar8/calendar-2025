@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/calendar', (req, res) => {
-  res.json({ message: 'API error! Please try again later' });
+  res.status(500).json({ message: 'API error! Please try again later' });
 })
 
 app.listen(port, () => {
