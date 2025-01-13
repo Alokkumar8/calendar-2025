@@ -5,114 +5,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar for Year 2025 (Angola)</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .ad-space {
+        width: 15%;
+        background-color: #ddd;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+        min-height: 600px;
+      }
+      .calendar {
+        flex: 0 0 70%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        overflow-x: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .months {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .month {
+        width: 32%;
+        margin-bottom: 20px;
+        min-width: 250px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .holiday {
+        background-color: #ffcccc;
+      }
+      .observance {
+        background-color: #ccffcc;
+      }
+      .legend {
+        margin-top: 20px;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        width: 33.33%;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .legend-color {
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        display: inline-block;
+      }
+      .logo {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 1200px) {
         .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
+          flex-direction: column;
         }
         .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
+          width: 100%;
+          min-height: 100px;
+          margin-bottom: 20px;
         }
         .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+          width: 100%;
         }
         .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
+          width: 100%;
         }
         .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
+          width: 50%;
         }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow links to wrap onto new lines */
+        margin: 0;
+      }
+
+      footer nav ul li {
+        margin: 5px 15px;
+      }
+
+      footer nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Optional: Add a hover effect for the links */
+      footer nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .internal-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      .internal-links a {
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        color: #4a6da7;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        background-color: #ffffff;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .internal-links a:hover {
+        background-color: #e8f0fe;
+        color: #2c4a7c;
+      }
+
+      @media (max-width: 768px) {
+        .internal-links {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 10px;
         }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
+
+        .internal-links a {
+          font-size: 14px;
+          padding: 12px;
         }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
+      }
+
+      @media (max-width: 480px) {
+        .internal-links {
+          grid-template-columns: 1fr;
         }
+
+        .internal-links a {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+
+      country-select-wrapper {
+        max-width: 200px;
+        margin: 20px;
+      }
+
+      .country-select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .country-select:focus {
+        outline: none;
+        border-color: #4a6da7;
+        box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+      }
     </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/ao/calendar-2025-angola.html" />
@@ -527,6 +626,152 @@
                 <div class="legend-item">11 Nov • Independence Day</div>
                 <div class="legend-item">25 Dec • Christmas Day</div>
             </div>
+
+            <h2>Public Holidays in Angola in Calendar 2025</h2>
+
+            <p>
+              As we look ahead to the year 2025, understanding the key public holidays in the calendar 2025 is important for planning. Angola observes a variety of public holidays throughout the year, reflecting its cultural, historical, and national significance. Below is a detailed list of all the public holidays in Angola for the year 2025.
+            </p>
+            
+            <h4>1. New Year's Day - January 1, 2025</h4>
+            <p>
+              New Year's Day is a global celebration, and Angola is no exception. Families and friends come together to welcome the new year with festivities, gatherings, and joyful celebrations across the country.
+            </p>
+            
+            <h4>2. Liberation Day - February 4, 2025</h4>
+            <p>
+              Liberation Day marks the start of the armed struggle for Angola's independence in 1961. It is a day to remember and honor the sacrifices made by those who fought for the country's freedom.
+            </p>
+            <img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+            <h4>3. International Women’s Day - March 8, 2025</h4>
+            <p>
+              International Women’s Day is a public holiday in Angola, celebrating the contributions of women to society. It is a day of appreciation and recognition for women’s roles in shaping the nation.
+            </p>
+            
+            <h4>4. Good Friday - April 18, 2025</h4>
+            <p>
+              Good Friday is an important Christian observance, commemorating the crucifixion of Jesus Christ. Churches across Angola hold special services, and many people observe the day with prayer and reflection.
+            </p>
+            <img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+            <h4>5. Easter Sunday - April 20, 2025</h4>
+            <p>
+              Easter Sunday celebrates the resurrection of Jesus Christ. It is a joyous occasion marked by church services, family gatherings, and festive meals, reflecting Angola's deep Christian traditions.
+            </p>
+            
+            <h4>6. International Workers’ Day - May 1, 2025</h4>
+            <p>
+              International Workers’ Day, also known as Labor Day, is a global celebration of workers' rights and achievements. In Angola, it is observed with parades, speeches, and community events.
+            </p>
+            
+            <h4>7. Africa Day - May 25, 2025</h4>
+            <p>
+              Africa Day celebrates the foundation of the Organization of African Unity (OAU) in 1963. In Angola, it is a day to honor African unity, heritage, and progress.
+            </p>
+            <img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+            <h4>8. Independence Day - November 11, 2025</h4>
+            <p>
+              Independence Day is Angola's most significant national holiday, commemorating the country's independence from Portuguese rule in 1975. Celebrations include parades, cultural performances, and speeches reflecting on Angola's journey as a sovereign nation.
+            </p>
+            
+            <h4>9. Christmas Day - December 25, 2025</h4>
+            <p>
+              Christmas Day is celebrated with great joy and reverence in Angola. Families come together to attend church services, exchange gifts, and enjoy festive meals, marking the birth of Jesus Christ.
+            </p>
+            
+            <h4>10. Day of Peace and Reconciliation - April 4, 2025</h4>
+            <p>
+              This day commemorates the signing of the peace agreement in 2002 that ended Angola’s civil war. It is a day to reflect on the importance of peace and unity in building the nation.
+            </p>
+            
+            <h4>11. Carnival Tuesday - March 4, 2025</h4>
+            <p>
+              Carnival Tuesday, or “Entrudo,” is celebrated with vibrant parades, music, and dancing. It is a lively tradition in Angola that showcases the country's rich culture and joyful spirit.
+            </p>
+            
+            <h4>12. All Souls' Day - November 2, 2025</h4>
+            <p>
+              All Souls’ Day is a day of remembrance for departed loved ones. Families visit cemeteries, offer prayers, and honor the memories of those who have passed away.
+            </p>
+            
+            <h4>13. National Heroes Day - September 17, 2025</h4>
+            <p>
+              National Heroes Day honors the sacrifices and contributions of those who fought for Angola’s independence and sovereignty. The day is marked with ceremonies, speeches, and events commemorating the country's heroes.
+            </p>
+            
+            <h4>14. Ascension Day - May 29, 2025</h4>
+            <p>
+              Ascension Day is a Christian holiday commemorating the ascension of Jesus Christ into heaven. It is observed with church services and prayers in Angola.
+            </p>
+            
+            <h4>15. Assumption Day - August 15, 2025</h4>
+            <p>
+              Assumption Day is a Christian feast celebrating the Virgin Mary's ascension into heaven. It is a significant day for Angola's Catholic community, marked by special services and prayers.
+            </p>
+            
+
+            <div class="internal-links">
+              <a href="../af/calendar-2025-afghanistan.html"
+                >Calendar 2025 (Afghanistan)</a
+              >
+              <a href="../al/calendar-2025-albania.html">Calendar 2025 (Albania)</a>
+              <a href="../dz/calendar-2025-algeria.html">Calendar 2025 (Algeria)</a>
+              <a href="../as/calendar-2025-american-samoa.html"
+                >Calendar 2025 (American Samoa)</a
+              >
+              <a href="../ad/calendar-2025-andorra.html">Calendar 2025 (Andorra)</a>
+              <a href="../ao/calendar-2025-angola.html">Calendar 2025 (Angola)</a>
+              <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+              <a href="../ag/calendar-2025-antigua-and-barbuda.html"
+                >Calendar 2025 (Antigua and Barbuda)</a
+              >
+              <a href="../ar/calendar-2025-argentina.html"
+                >Calendar 2025 (Argentina)</a
+              >
+              <a href="../am/calendar-2025-armenia.html">Calendar 2025 (Armenia)</a>
+              <a href="../aw/calendar-2025-aruba.html">Calendar 2025 (Aruba)</a>
+              <a href="../au/calendar-2025-australia.html"
+                >Calendar 2025 (Australia)</a
+              >
+              <a href="../at/calendar-2025-austria.html">Calendar 2025 (Austria)</a>
+              <a href="../az/calendar-2025-azerbaijan.html"
+                >Calendar 2025 (Azerbaijan)</a
+              >
+              <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+              <a href="../bh/calendar-2025-bahrain.html">Calendar 2025 (Bahrain)</a>
+              <a href="../bd/calendar-2025-bangladesh.html"
+                >Calendar 2025 (Bangladesh)</a
+              >
+              <a href="../bg/calendar-2025-bulgaria.html">Calendar 2025 (Bulgaria)</a>
+              <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+              <a href="../cn/calendar-2025-china.html">Calendar 2025 (China)</a>
+              <a href="../cz/calendar-2025-Czechia.html">Calendar 2025 (Czechia)</a>
+              <a href="../dk/calendar-2025-denmark.html">Calendar 2025 (Denmark)</a>
+              <a href="../ee/calendar-2025-estonia.html">Calendar 2025 (Estonia)</a>
+              <a href="../fi/calendar-2025-finland.html">Calendar 2025 (Finland)</a>
+            </div>
+    
+            <footer>
+              <div>
+                <p>&copy; calendar-2025.org</p>
+                <nav>
+                  <ul>
+                   
+    
+                    <li><a href="../about-us.html">About</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contact-us.html">Contact</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                    <li><a href="../api-docs.html">API</a></li>
+                    <li><a href="../api-status.html">API status</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li>
+                      <a href="../terms-and-conditions.html">Terms of Service</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
