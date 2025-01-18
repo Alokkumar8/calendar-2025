@@ -14,6 +14,17 @@ app.get('/calendar', (req, res) => {
   res.status(500).json({ message: 'API error! Please try again later' });
 })
 
+app.get('/holidays', (req, res) => {
+  fetch(`https://date.nager.at/api/v3/publicholidays/2025/${req.query.country}`)
+    .then(response => response.json())
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.status(500).json({ message: 'API error! Please try again later' });
+    });
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

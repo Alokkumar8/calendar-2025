@@ -69,40 +69,37 @@
         <div class="content-code"></div>
         <div class="content">
             <div class="overflow-hidden content-section" id="content-get-started">
-                <h1>Get calendar</h1>
+                <h1>HOLIDAYS 2025 API</h1>
                 <pre>
      API Endpoint
  
         https://calendar-2025.org/
                  </pre>
                 <p>
-                    The Calendar 2025 API provides you calendar of the country you pass as parameter and its holidays.
+                    The Calendar 2025 API provides you holidays of 2025 of the country you pass as parameter.
                 </p>
                 <p>
                     Using this <strong>API</strong> doesn't require any api key and it is free for all.
                 </p>
             </div>
             <div class="overflow-hidden content-section" id="content-upload-file">
-                <h2>GET CALENDAR</h2>
+                <h2>GET HOLIDAYS</h2>
                 <pre><code class="bash">
- # Here is a curl example to get your age
+ # Here is a curl example to get holidays of 2025 of United States
  curl \
- -X GET https://calendar-2025.org/calendar?country=us \
+ -X GET https://calendar-2025.org/holidays?country=us \
  -F 'Accept: *' \
                  </code></pre>
                 <p>
-                    To get a country's calendar in json, make a GET call to the following url and pass the country code:<br>
-                    <code class="higlighted break-word">https://calendar-2025.org/calendar?country=us</code>
+                    To get a country's holiday for 2025 in json, make a GET call to the following url and pass the country code:<br>
+                    <code class="higlighted break-word">https://calendar-2025.org/holidays?country=us</code>
                 </p>
                 <br>
                 <pre><code class="json">
  Result example :
  
  {
-    January: [1, 2, 3, 4, 5, 6...],
-    February: [1, 2, 3, 4, 5, 6...],
-    ...
-    holidays: [{"name": "Christmas", "date": "25 December"}]
+    [{"date":"2025-01-01","localName":"New Year's Day","name":"New Year's Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2025-01-20","localName":"Martin Luther King, Jr. Day","name":"Martin Luther King, Jr...
  }
                  </code></pre>
                 <h4>QUERY PARAMETERS</h4>
