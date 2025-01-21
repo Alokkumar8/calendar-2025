@@ -4,117 +4,220 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar for Year 2025 (Canada)</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-      }
+    <meta
+    name="description"
+    content="See calendar of 2025 of Canada. You can view holidays and observances of Canada in calendar year 2025."
+  />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
       .container {
-        display: flex;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box;
+        flex-direction: column;
       }
       .ad-space {
-        width: 15%;
-        background-color: #ddd;
-        padding: 20px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        color: #666;
-        min-height: 600px;
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
       }
       .calendar {
-        flex: 0 0 70%;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        overflow-x: auto;
-      }
-      h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
-      }
-      .months {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        width: 100%;
       }
       .month {
-        width: 32%;
-        margin-bottom: 20px;
-        min-width: 250px;
-      }
-      table {
         width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        text-align: center;
-        padding: 5px;
-        font-size: 12px;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-      .holiday {
-        background-color: #ffcccc;
-      }
-      .observance {
-        background-color: #ccffcc;
-      }
-      .legend {
-        margin-top: 20px;
-        font-size: 12px;
-        display: flex;
-        flex-wrap: wrap;
       }
       .legend-item {
-        width: 33.33%;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
+        width: 50%;
       }
-      .legend-color {
-        width: 10px;
-        height: 10px;
-        margin-right: 5px;
-        display: inline-block;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
       }
-      .logo {
-        text-align: right;
-        margin-bottom: 10px;
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
       }
-      @media (max-width: 1200px) {
-        .container {
-          flex-direction: column;
-        }
-        .ad-space {
-          width: 100%;
-          min-height: 100px;
-          margin-bottom: 20px;
-        }
-        .calendar {
-          width: 100%;
-        }
-        .month {
-          width: 100%;
-        }
-        .legend-item {
-          width: 50%;
-        }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
       }
-    </style>
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
     <link
       rel="canonical"
@@ -1153,6 +1256,137 @@
           <div class="legend-item">25 Dec • Christmas Day</div>
           <div class="legend-item">26 Dec • Boxing Day</div>
         </div>
+
+
+        <h2>Public Holidays in Canada in Calendar 2025</h2>
+
+        <p>
+          As we look ahead to the year 2025, understanding the key public holidays in the calendar 2025 is important for planning. Canada observes a variety of public holidays throughout the year, and being aware of these dates can help you organize vacations and special events. Below is a detailed list of all the public holidays in Canada for the year 2025.
+        </p>
+        
+        <h4>1. New Year's Day - January 1, 2025</h4>
+        <p>
+          New Year's Day marks the start of the year on the 2025 calendar. It is celebrated nationwide with gatherings, fireworks, and resolutions. Canadians often spend the day relaxing with family and friends or enjoying winter activities.
+        </p>
+        
+        <h4>2. Family Day - February 17, 2025 (varies by province)</h4>
+        <p>
+          Family Day is a statutory holiday observed in several provinces, including Alberta, British Columbia, and Ontario. It is a day to spend quality time with loved ones through activities like ice skating, hiking, or simply relaxing at home.
+        </p>
+        
+        <h4>3. Good Friday - April 18, 2025</h4>
+        <p>
+          Good Friday is a significant Christian holiday observed across Canada. It commemorates the crucifixion of Jesus Christ and is marked by church services and reflection. Many Canadians also observe this day as a time of rest and family gatherings.
+        </p>
+        <img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+        <h4>4. Victoria Day - May 19, 2025</h4>
+        <p>
+          Victoria Day celebrates the birthday of Queen Victoria and is considered the unofficial start of summer in Canada. Canadians enjoy outdoor activities such as picnics, fireworks, and gardening on this day.
+        </p>
+        
+        <h4>5. Canada Day - July 1, 2025</h4>
+        <p>
+          Canada Day marks the anniversary of the confederation of Canada in 1867. It is celebrated with parades, concerts, and fireworks across the country. Major cities like Ottawa, Toronto, and Vancouver host grand celebrations.
+        </p>
+        
+        <h4>6. Civic Holiday - August 4, 2025 (varies by province)</h4>
+        <p>
+          The Civic Holiday is observed in many provinces as a day to celebrate local heritage and culture. Activities vary by region, but it often includes festivals, parades, and community events.
+        </p>
+        <img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+        <h4>7. Labour Day - September 1, 2025</h4>
+        <p>
+          Labour Day honors the contributions of workers to Canadian society. It is celebrated with parades, picnics, and sports events. For many, it also marks the unofficial end of summer and the start of the school year.
+        </p>
+        
+        <h4>8. Thanksgiving Day - October 13, 2025</h4>
+        <p>
+          Thanksgiving Day in Canada is a time to give thanks for the harvest and other blessings of the past year. Families gather for meals, typically featuring turkey, stuffing, and pumpkin pie, while reflecting on gratitude.
+        </p>
+        
+        <h4>9. Remembrance Day - November 11, 2025</h4>
+        <p>
+          Remembrance Day honors the sacrifices of Canadian soldiers in times of war. Observances include ceremonies at war memorials, the wearing of poppies, and a moment of silence at 11 a.m.
+        </p>
+        
+        <h4>10. Christmas Day - December 25, 2025</h4>
+        <p>
+          Christmas Day celebrates the birth of Jesus Christ and is a cherished holiday across Canada. Families exchange gifts, enjoy festive meals, and decorate their homes with lights and ornaments.
+        </p>
+        
+        <h4>11. Boxing Day - December 26, 2025</h4>
+        <p>
+          Boxing Day is a public holiday in many parts of Canada, known for post-Christmas sales and shopping. It is also a time for relaxation and spending time with family after the Christmas festivities.
+        </p>
+        
+        <h4>12. Easter Monday - April 21, 2025 (optional holiday)</h4>
+        <p>
+          Easter Monday is not a statutory holiday in most provinces but is observed by federal employees and some businesses. It follows Easter Sunday and is often a day for rest and travel.
+        </p>
+        
+        <h4>13. National Indigenous Peoples Day - June 21, 2025</h4>
+        <p>
+          National Indigenous Peoples Day celebrates the rich culture, heritage, and contributions of Indigenous peoples in Canada. Events include traditional ceremonies, storytelling, music, and dancing.
+        </p>
+        <img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+        <h4>14. Saint-Jean-Baptiste Day - June 24, 2025 (Quebec only)</h4>
+        <p>
+          Saint-Jean-Baptiste Day is a public holiday in Quebec, celebrated with parades, fireworks, and cultural events. It honors the patron saint of French Canadians and showcases Quebecois culture and traditions.
+        </p>
+        
+        <h4>15. New Brunswick Day - August 4, 2025 (New Brunswick only)</h4>
+        <p>
+          New Brunswick Day is a provincial holiday celebrating the history and culture of New Brunswick. Festivities often include local events, concerts, and community gatherings.
+        </p>
+        
+
+        <div class="internal-links">
+          <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+          <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+          <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+          <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+          <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+          <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+          <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+          <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+          <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+          <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+          <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+          <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+          <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+          <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+          <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+          <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+          <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+          <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+          <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+          <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+          <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+          <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+          <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+          <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+        </div>
+
+        <footer>
+          <div>
+            <p>&copy; calendar-2025.org</p>
+            <nav>
+              <ul>
+                <li><a href="../about-us.html">About</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+                <li><a href="../contact-us.html">Contact</a></li>
+                <li><a href="../login.html">Login</a></li>
+                <li><a href="../api-docs.html">API</a></li>
+                <li><a href="../api-status.html">API status</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                <li>
+                  <a href="../terms-and-conditions.html">Terms of Service</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
       </div>
       <div class="ad-space">
         <div

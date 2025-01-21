@@ -4,117 +4,220 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Календар за 2025 година (България)</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-      }
+    <meta
+    name="description"
+    content="Вижте календара за 2025 година на България. Можете да разгледате празниците и честванията в България през календарната година 2025."
+  />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
       .container {
-        display: flex;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box;
+        flex-direction: column;
       }
       .ad-space {
-        width: 15%;
-        background-color: #ddd;
-        padding: 20px;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 14px;
-        color: #666;
-        min-height: 600px;
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
       }
       .calendar {
-        flex: 0 0 70%;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        box-sizing: border-box;
-        overflow-x: auto;
-      }
-      h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
-      }
-      .months {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        width: 100%;
       }
       .month {
-        width: 32%;
-        margin-bottom: 20px;
-        min-width: 250px;
-      }
-      table {
         width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        text-align: center;
-        padding: 5px;
-        font-size: 12px;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-      .holiday {
-        background-color: #ffcccc;
-      }
-      .observance {
-        background-color: #ccffcc;
-      }
-      .legend {
-        margin-top: 20px;
-        font-size: 12px;
-        display: flex;
-        flex-wrap: wrap;
       }
       .legend-item {
-        width: 33.33%;
-        margin-bottom: 5px;
-        display: flex;
-        align-items: center;
+        width: 50%;
       }
-      .legend-color {
-        width: 10px;
-        height: 10px;
-        margin-right: 5px;
-        display: inline-block;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
       }
-      .logo {
-        text-align: right;
-        margin-bottom: 10px;
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
       }
-      @media (max-width: 1200px) {
-        .container {
-          flex-direction: column;
-        }
-        .ad-space {
-          width: 100%;
-          min-height: 100px;
-          margin-bottom: 20px;
-        }
-        .calendar {
-          width: 100%;
-        }
-        .month {
-          width: 100%;
-        }
-        .legend-item {
-          width: 50%;
-        }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
       }
-    </style>
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
     <link
       rel="canonical"
@@ -1163,6 +1266,136 @@
           <div class="legend-item">25 дек • Рождество Христово</div>
           <div class="legend-item">26 дек • Рождество Христово</div>
         </div>
+
+        <h2>Официални празници в България през 2025 година</h2>
+
+<p>
+  Поглеждайки напред към 2025 година, разбирането на ключовите официални празници е важно за планиране. България отбелязва разнообразие от официални празници през годината, и познаването на тези дати може да ви помогне да организирате ваканции и специални събития. По-долу е даден подробен списък на всички официални празници в България за 2025 година.
+</p>
+
+<h4>1. Нова година – 1 януари 2025</h4>
+<p>
+  Нова година бележи началото на новата година в календара за 2025 година. Тя се празнува с радост и надежди за бъдещето. Семейства и приятели се събират за празнични вечери, поздрави и фойерверки, за да приветстват новата година.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>2. Ден на Освобождението на България – 3 март 2025</h4>
+<p>
+  Националният празник на България, Денят на Освобождението, се чества на 3 март. Той отбелязва освобождението на България от османско владичество през 1878 година. Празникът е придружен от церемонии, шествия и културни събития в цялата страна.
+</p>
+
+<h4>3. Великден – 20 април 2025</h4>
+<p>
+  Великден е един от най-важните християнски празници, отбелязващ Възкресението на Исус Христос. Семействата се събират за традиционни обеди, боядисват яйца и участват в богослужения. Датата варира всяка година според православния календар.
+</p>
+
+<h4>4. Ден на труда – 1 май 2025</h4>
+<p>
+  Денят на труда се отбелязва на 1 май в чест на правата на работниците. Това е официален празник, свързан с демонстрации и културни събития.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>5. Ден на славянската писменост и култура – 24 май 2025</h4>
+<p>
+  На 24 май България чества делото на светите братя Кирил и Методий и тяхната азбука. Това е ден на българската просвета и култура, изпълнен с празнични шествия и тържества в училищата и обществените институции.
+</p>
+
+<h4>6. Съединението на България – 6 септември 2025</h4>
+<p>
+  Този ден отбелязва историческото събитие от 1885 година, когато Източна Румелия се обединява с Княжество България. Съединението се чества с празнични събития и исторически възстановки.
+</p>
+
+<h4>7. Ден на независимостта – 22 септември 2025</h4>
+<p>
+  Денят на независимостта отбелязва обявяването на независимостта на България през 1908 година. Той е съпроводен от официални церемонии, концерти и фолклорни фестивали.
+</p>
+
+<h4>8. Коледа – 25 декември 2025</h4>
+<p>
+  Коледа е един от най-обичаните празници в България. Тя е време за семейни събирания, традиционни ястия и подаръци. Християните в страната празнуват раждането на Исус Христос с църковни служби и песни.
+</p>
+
+<h4>9. Баба Марта – 1 март 2025</h4>
+<p>
+  Баба Марта е уникален български обичай, при който хората разменят мартеници за здраве и щастие. Този празник символизира настъпването на пролетта.
+</p>
+
+<h4>10. Велики петък – 18 април 2025</h4>
+<p>
+  Велики петък е ден на траур и размисъл за християните. Той отбелязва разпятието на Исус Христос и е част от великденските празници.
+</p>
+
+<h4>11. Цветница – 13 април 2025</h4>
+<p>
+  Цветница е пролетен празник, посветен на разцъфването на природата. Хората с имена на цветя празнуват своя имен ден, а в църквите се благославят върбови клонки.
+</p>
+
+<h4>12. Илинден – 20 юли 2025</h4>
+<p>
+  Илинден е празник, посветен на свети пророк Илия. В някои райони на България той е свързан с народни обичаи за дъжд и плодородие.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>13. Гергьовден – 6 май 2025</h4>
+<p>
+  Гергьовден е Денят на храбростта и Българската армия. Празникът е свързан с традиции за здраве, плодородие и отдаване на почит към Свети Георги.
+</p>
+
+<h4>14. Спасовден – 29 май 2025</h4>
+<p>
+  Спасовден е християнски празник, отбелязващ Възнесението на Христос. Той е свързан с редица обичаи и празненства в различни части на България.
+</p>
+
+<h4>15. Архангеловден – 8 ноември 2025</h4>
+<p>
+  Архангеловден е посветен на Свети Архангел Михаил. Този ден се чества с църковни служби и семейни събирания.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
       </div>
       <div class="ad-space">
         <div
