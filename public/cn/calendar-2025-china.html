@@ -4,115 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025年日历 (中国)</title>
+    <meta
+    name="description"
+    content="查看2025年中国的日历。您可以在2025年日历中查看中国的节假日和纪念日。"
+    />
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .ad-space {
+        width: 15%;
+        background-color: #ddd;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+        min-height: 600px;
+      }
+      .calendar {
+        flex: 0 0 70%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        overflow-x: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .months {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .month {
+        width: 32%;
+        margin-bottom: 20px;
+        min-width: 250px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .holiday {
+        background-color: #ffcccc;
+      }
+      .observance {
+        background-color: #ccffcc;
+      }
+      .legend {
+        margin-top: 20px;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        width: 33.33%;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .legend-color {
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        display: inline-block;
+      }
+      .logo {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 1200px) {
         .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
+          flex-direction: column;
         }
         .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
+          width: 100%;
+          min-height: 100px;
+          margin-bottom: 20px;
         }
         .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+          width: 100%;
         }
         .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
+          width: 100%;
         }
         .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
+          width: 50%;
         }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      footer nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow links to wrap onto new lines */
+        margin: 0;
+      }
+  
+      footer nav ul li {
+        margin: 5px 15px;
+      }
+  
+      footer nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      /* Optional: Add a hover effect for the links */
+      footer nav ul li a:hover {
+        text-decoration: underline;
+      }
+  
+      .internal-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+  
+      .internal-links a {
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        color: #4a6da7;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        background-color: #ffffff;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+  
+      .internal-links a:hover {
+        background-color: #e8f0fe;
+        color: #2c4a7c;
+      }
+  
+      @media (max-width: 768px) {
+        .internal-links {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 10px;
         }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
+  
+        .internal-links a {
+          font-size: 14px;
+          padding: 12px;
         }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
+      }
+  
+      @media (max-width: 480px) {
+        .internal-links {
+          grid-template-columns: 1fr;
         }
+  
+        .internal-links a {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+  
+      country-select-wrapper {
+        max-width: 200px;
+        margin: 20px;
+      }
+  
+      .country-select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+  
+      .country-select:focus {
+        outline: none;
+        border-color: #4a6da7;
+        box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+      }
     </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/cn/calendar-2025-china.html" />
@@ -526,6 +630,137 @@
                 <div class="legend-item">9月17日 • 中秋节</div>
                 <div class="legend-item">10月1-3日 • 国庆节</div>
             </div>
+
+            <h2>2025年中国的法定节假日</h2>
+
+<p>
+  展望2025年，了解日历中的重要法定节假日对计划旅行和活动非常重要。中国一年中有许多法定节假日，了解这些日期有助于合理安排假期和特别活动。以下是2025年中国所有法定节假日的详细列表。
+</p>
+
+<h4>1. 元旦 - 2025年1月1日</h4>
+<p>
+  元旦是公历新年的第一天，全国人民庆祝这一新年的到来。这一天通常伴随着家庭聚会、晚会以及各种庆祝活动，标志着新一年的开始和新的希望。
+</p>
+
+<h4>2. 春节 - 2025年1月29日至2月4日</h4>
+<p>
+  春节是中国最重要的传统节日，也被称为农历新年。这是家人团聚的时刻，人们会扫尘、贴春联、放鞭炮、吃团圆饭，并互送红包。春节象征着辞旧迎新、万象更新。
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. 元宵节 - 2025年2月12日</h4>
+<p>
+  元宵节是春节的尾声，人们通过赏花灯、猜灯谜和吃汤圆来庆祝。这一天象征着团圆与和谐，是中国传统文化的重要组成部分。
+</p>
+
+<h4>4. 清明节 - 2025年4月4日</h4>
+<p>
+  清明节是缅怀先人的重要日子，人们会扫墓祭祖并踏青。这一天既承载了思念先人的传统，也象征着春天的到来和生命的延续。
+</p>
+
+<h4>5. 劳动节 - 2025年5月1日</h4>
+<p>
+  劳动节是国际性的节日，旨在庆祝劳动者的贡献。中国通常会放假三天，人们通过旅游、购物或休闲活动来享受假期。
+</p>
+
+<h4>6. 端午节 - 2025年6月1日</h4>
+<p>
+  端午节纪念伟大的爱国诗人屈原。这一天的主要活动包括赛龙舟和吃粽子，象征着对历史人物的缅怀和对文化传统的尊重。
+</p>
+
+<h4>7. 中秋节 - 2025年9月6日</h4>
+<p>
+  中秋节是团圆的节日，家人会共赏明月、吃月饼。这一天象征着家庭团圆和丰收，人们也借此表达对亲人的思念。
+</p>
+
+<h4>8. 国庆节 - 2025年10月1日至10月7日</h4>
+<p>
+  国庆节是庆祝中华人民共和国成立的纪念日。这一周被称为“黄金周”，是旅游和消费的高峰期，全国各地举行升旗仪式、文艺演出和烟花表演。
+</p>
+
+<h4>9. 除夕 - 2025年1月28日</h4>
+<p>
+  除夕是农历年的最后一天，也是家人团聚的重要时刻。人们通过吃年夜饭、守岁和观看春节联欢晚会来迎接新年的到来。
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>10. 七夕节 - 2025年8月2日</h4>
+<p>
+  七夕节是中国传统的情人节，源于牛郎织女的浪漫传说。情侣们在这一天通过赠送礼物、共进晚餐表达爱意。
+</p>
+
+<h4>11. 重阳节 - 2025年10月31日</h4>
+<p>
+  重阳节是尊老敬老的传统节日，人们会登高、赏菊并饮菊花酒。这一天也体现了对长辈健康长寿的美好祝愿。
+</p>
+
+<h4>12. 小年 - 2025年1月22日</h4>
+<p>
+  小年是春节的前奏，人们会进行大扫除、祭灶神，为迎接新年做准备。它象征着辞旧迎新的开始。
+</p>
+
+<h4>13. 腊八节 - 2025年1月8日</h4>
+<p>
+  腊八节是佛教的重要节日，人们会熬制腊八粥，祈求健康和福气。这一天也象征着冬天的结束和春节的临近。
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>14. 建军节 - 2025年8月1日</h4>
+<p>
+  建军节是纪念中国人民解放军成立的日子。这一天通过纪念活动表达对军人的敬意，也体现了国防的重要性。
+</p>
+
+<h4>15. 冬至 - 2025年12月22日</h4>
+<p>
+  冬至是重要的二十四节气之一，人们通过吃饺子或汤圆来庆祝。这一天象征着白昼逐渐变长，预示着新的开始。
+</p>
+
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">

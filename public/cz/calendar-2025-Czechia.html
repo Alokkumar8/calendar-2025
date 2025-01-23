@@ -4,115 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalendář pro rok 2025 (Česká republika)</title>
+    <meta
+    name="description"
+    content="Podívejte se na kalendář České republiky pro rok 2025. Můžete si prohlédnout svátky a významné dny České republiky v kalendářním roce 2025."
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .ad-space {
+        width: 15%;
+        background-color: #ddd;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+        min-height: 600px;
+      }
+      .calendar {
+        flex: 0 0 70%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        overflow-x: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .months {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .month {
+        width: 32%;
+        margin-bottom: 20px;
+        min-width: 250px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .holiday {
+        background-color: #ffcccc;
+      }
+      .observance {
+        background-color: #ccffcc;
+      }
+      .legend {
+        margin-top: 20px;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        width: 33.33%;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .legend-color {
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        display: inline-block;
+      }
+      .logo {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 1200px) {
         .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
+          flex-direction: column;
         }
         .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
+          width: 100%;
+          min-height: 100px;
+          margin-bottom: 20px;
         }
         .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+          width: 100%;
         }
         .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
+          width: 100%;
         }
         .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
+          width: 50%;
         }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      footer nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow links to wrap onto new lines */
+        margin: 0;
+      }
+  
+      footer nav ul li {
+        margin: 5px 15px;
+      }
+  
+      footer nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+  
+      /* Optional: Add a hover effect for the links */
+      footer nav ul li a:hover {
+        text-decoration: underline;
+      }
+  
+      .internal-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+  
+      .internal-links a {
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        color: #4a6da7;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        background-color: #ffffff;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+  
+      .internal-links a:hover {
+        background-color: #e8f0fe;
+        color: #2c4a7c;
+      }
+  
+      @media (max-width: 768px) {
+        .internal-links {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 10px;
         }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
+  
+        .internal-links a {
+          font-size: 14px;
+          padding: 12px;
         }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
+      }
+  
+      @media (max-width: 480px) {
+        .internal-links {
+          grid-template-columns: 1fr;
         }
+  
+        .internal-links a {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+  
+      country-select-wrapper {
+        max-width: 200px;
+        margin: 20px;
+      }
+  
+      .country-select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+  
+      .country-select:focus {
+        outline: none;
+        border-color: #4a6da7;
+        box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+      }
     </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/cz/calendar-2025-Czechia.html" />
@@ -532,6 +635,126 @@
                 <div class="legend-item">25 Pro • 1. svátek vánoční</div>
                 <div class="legend-item">26 Pro • 2. svátek vánoční</div>
             </div>
+
+            <h2>Státní svátky v České republice v roce 2025</h2>
+
+<p>
+  Při pohledu na rok 2025 je důležité mít přehled o státních svátcích v kalendáři na tento rok. Česká republika slaví během roku různé svátky, které mohou pomoci s plánováním dovolených a speciálních událostí. Níže naleznete podrobný seznam všech státních svátků v České republice pro rok 2025.
+</p>
+
+<h4>1. Nový rok - 1. ledna 2025</h4>
+<p>
+  Nový rok označuje začátek nového kalendářního roku. Tento den je často spojen s oslavami, předsevzetími a nadějí do budoucna. V České republice je zvykem vítat nový rok ohňostroji a rodinnými setkáními.
+</p>
+
+<h4>2. Velký pátek - 18. dubna 2025</h4>
+<p>
+  Velký pátek je křesťanský svátek, který připomíná ukřižování Ježíše Krista. Tento den je dnem ztišení a rozjímání. Mnoho věřících se účastní bohoslužeb v kostelích a věnuje se modlitbám.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Velikonoční pondělí - 21. dubna 2025</h4>
+<p>
+  Velikonoční pondělí je tradičně spojeno s pomlázkou a koledováním. V České republice je tento den plný lidových zvyků, při kterých muži šlehají ženy pomlázkou, což symbolizuje zdraví a plodnost.
+</p>
+
+<h4>4. Svátek práce - 1. května 2025</h4>
+<p>
+  Svátek práce se slaví jako den solidarity pracujících. Lidé často tráví tento den na prvomájových demonstracích, piknicích nebo jiných společenských akcích.
+</p>
+
+<h4>5. Den vítězství - 8. května 2025</h4>
+<p>
+  Tento den připomíná konec druhé světové války v Evropě v roce 1945. V České republice je tradičně spojen s pietními akcemi a vzpomínkami na oběti války.
+</p>
+
+<h4>6. Den slovanských věrozvěstů Cyrila a Metoděje - 5. července 2025</h4>
+<p>
+  Tento svátek oslavuje příchod věrozvěstů Cyrila a Metoděje na Velkou Moravu v roce 863. Je významným dnem pro českou kulturu a křesťanskou tradici.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>7. Den upálení mistra Jana Husa - 6. července 2025</h4>
+<p>
+  Tento den připomíná upálení kazatele a reformátora Jana Husa v roce 1415. Je symbolem boje za pravdu a spravedlnost.
+</p>
+
+<h4>8. Den české státnosti - 28. září 2025</h4>
+<p>
+  Tento svátek je věnován svatému Václavovi, patronovi české země. Připomíná význam svatého Václava pro české dějiny a státnost.
+</p>
+
+<h4>9. Den vzniku samostatného československého státu - 28. října 2025</h4>
+<p>
+  Tento den oslavuje vznik samostatného Československa v roce 1918. Je spojen s ceremoniemi a udělováním státních vyznamenání na Pražském hradě.
+</p>
+
+<h4>10. Den boje za svobodu a demokracii - 17. listopadu 2025</h4>
+<p>
+  Tento svátek připomíná události roku 1939 a Sametovou revoluci v roce 1989. Je symbolem boje za svobodu, demokracii a lidská práva.
+</p>
+
+<h4>11. Štědrý den - 24. prosince 2025</h4>
+<p>
+  Štědrý den je dnem vánočních oslav. Rodiny se scházejí k večeři, rozdávají si dárky a zpívají koledy. V České republice je tradičním pokrmem kapr s bramborovým salátem.
+</p>
+
+<h4>12. 1. svátek vánoční - 25. prosince 2025</h4>
+<p>
+  První vánoční svátek připomíná narození Ježíše Krista. Je to den klidu a rodinných setkání.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>13. 2. svátek vánoční - 26. prosince 2025</h4>
+<p>
+  Druhý vánoční svátek je věnován svatému Štěpánovi. Lidé navštěvují přátele a příbuzné, aby si popřáli krásné svátky.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
@@ -541,4 +764,3 @@
     </div>
 </body>
 </html>
-
