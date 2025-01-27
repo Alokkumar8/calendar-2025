@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalender Tahun 2025 (Indonesia)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Lihat kalender tahun 2025 Indonesia. Anda dapat melihat hari libur dan peringatan di Indonesia pada tahun kalender 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/id/calendar-2025-indonesia.html" />
 <link
@@ -528,6 +632,136 @@
                 <div class="legend-item">12 Sep • Tahun Baru Islam</div>
                 <div class="legend-item">25 Des • Hari Natal</div>
             </div>
+
+            <h2>Hari Libur Nasional di Indonesia pada Kalender 2025</h2>
+
+<p>
+  Saat kita menantikan tahun 2025, memahami hari libur nasional yang terdapat di kalender 2025 sangatlah penting untuk perencanaan. Indonesia memiliki berbagai hari libur nasional sepanjang tahun, dan mengetahui tanggal-tanggal ini dapat membantu Anda merencanakan liburan dan acara khusus. Berikut adalah daftar lengkap hari libur nasional di Indonesia untuk tahun 2025.
+</p>
+
+<h4>1. Tahun Baru - 1 Januari 2025</h4>
+<p>
+  Tahun Baru dirayakan pada tanggal 1 Januari setiap tahun. Ini adalah hari untuk merayakan awal tahun baru dengan keluarga, teman, dan berbagai acara budaya. Banyak orang menghabiskan waktu dengan pesta, kembang api, dan membuat resolusi untuk tahun yang akan datang.
+</p>
+
+<h4>2. Tahun Baru Imlek - 29 Januari 2025</h4>
+<p>
+  Tahun Baru Imlek adalah perayaan tradisional Tionghoa yang dirayakan dengan meriah di Indonesia. Keluarga berkumpul, menikmati hidangan khas, dan berbagi amplop merah (angpao) sebagai simbol keberuntungan. Kota-kota besar seperti Jakarta dan Medan sering mengadakan festival yang penuh warna.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Hari Raya Nyepi - 29 Maret 2025</h4>
+<p>
+  Hari Raya Nyepi, Tahun Baru Saka, adalah hari hening yang dirayakan oleh umat Hindu di Bali. Seluruh pulau Bali berhenti dari aktivitas biasa, dengan tidak ada penerbangan, kendaraan, atau kegiatan umum. Ini adalah hari untuk refleksi, doa, dan meditasi.
+</p>
+
+<h4>4. Wafat Isa Almasih (Jumat Agung) - 18 April 2025</h4>
+<p>
+  Wafat Isa Almasih, juga dikenal sebagai Jumat Agung, adalah hari penting bagi umat Kristiani untuk memperingati penyaliban Yesus Kristus. Gereja-gereja di seluruh Indonesia mengadakan ibadah khusus, dan banyak orang mengikuti hari doa dan puasa.
+</p>
+
+<h4>5. Hari Buruh - 1 Mei 2025</h4>
+<p>
+  Hari Buruh Internasional dirayakan setiap tanggal 1 Mei untuk menghormati para pekerja di seluruh dunia. Di Indonesia, perayaan ini sering disertai dengan aksi unjuk rasa damai yang menyuarakan hak-hak buruh dan perbaikan kondisi kerja.
+</p>
+
+<h4>6. Kenaikan Isa Almasih - 30 Mei 2025</h4>
+<p>
+  Hari Kenaikan Isa Almasih memperingati kenaikan Yesus Kristus ke surga menurut tradisi Kristen. Hari ini dirayakan dengan kebaktian khusus di gereja-gereja dan doa bersama.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>7. Hari Raya Idul Fitri - 29-30 Maret 2025</h4>
+<p>
+  Hari Raya Idul Fitri menandai akhir bulan suci Ramadan. Umat Muslim di Indonesia merayakannya dengan sholat Idul Fitri, bersilaturahmi, dan saling memaafkan. Tradisi mudik, atau pulang kampung, juga menjadi bagian penting dari perayaan ini.
+</p>
+
+<h4>8. Hari Kemerdekaan Indonesia - 17 Agustus 2025</h4>
+<p>
+  Hari Kemerdekaan Indonesia dirayakan setiap tanggal 17 Agustus untuk memperingati proklamasi kemerdekaan pada tahun 1945. Acara utama termasuk upacara pengibaran bendera, lomba-lomba tradisional, dan pertunjukan budaya di seluruh negeri.
+</p>
+
+<h4>9. Maulid Nabi Muhammad SAW - 6 Oktober 2025</h4>
+<p>
+  Maulid Nabi memperingati hari kelahiran Nabi Muhammad SAW. Umat Muslim merayakannya dengan mengadakan doa bersama, ceramah agama, dan kegiatan sosial yang mempererat tali persaudaraan.
+</p>
+
+<h4>10. Hari Raya Idul Adha - 7 Juni 2025</h4>
+<p>
+  Idul Adha adalah hari raya kurban yang dirayakan oleh umat Muslim. Hewan seperti sapi dan kambing dikurbankan, dan dagingnya dibagikan kepada mereka yang membutuhkan. Hari ini juga dikenal sebagai waktu untuk refleksi dan pengorbanan.
+</p>
+
+<h4>11. Tahun Baru Islam (1 Muharram) - 27 Juli 2025</h4>
+<p>
+  Tahun Baru Islam adalah awal kalender Hijriah yang dirayakan dengan doa, pengajian, dan refleksi spiritual. Banyak umat Muslim di Indonesia menyambut hari ini dengan kegiatan keagamaan dan sosial.
+</p>
+
+<h4>12. Hari Natal - 25 Desember 2025</h4>
+<p>
+  Hari Natal dirayakan oleh umat Kristiani untuk memperingati kelahiran Yesus Kristus. Perayaan ini meliputi kebaktian di gereja, pemberian hadiah, dan perayaan keluarga. Banyak tempat dihiasi dengan pohon Natal dan lampu warna-warni.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>13. Isra Mi’raj Nabi Muhammad SAW - 28 Februari 2025</h4>
+<p>
+  Isra Mi’raj memperingati perjalanan malam Nabi Muhammad SAW dari Mekah ke Yerusalem dan naik ke langit. Umat Muslim merayakan hari ini dengan doa bersama dan ceramah agama di masjid.
+</p>
+
+<h4>14. Hari Raya Waisak - 22 Mei 2025</h4>
+<p>
+  Hari Raya Waisak dirayakan oleh umat Buddha untuk memperingati kelahiran, pencerahan, dan wafatnya Buddha Gautama. Perayaan utama berlangsung di candi-candi, seperti Borobudur, dengan prosesi dan doa bersama.
+</p>
+
+<h4>15. Hari Kartini - 21 April 2025</h4>
+<p>
+  Hari Kartini adalah hari untuk memperingati perjuangan R.A. Kartini dalam memajukan hak-hak perempuan di Indonesia. Banyak sekolah dan institusi merayakannya dengan lomba, seminar, dan kegiatan budaya.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">

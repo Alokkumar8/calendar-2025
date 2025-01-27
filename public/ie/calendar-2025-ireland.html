@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar for Year 2025 (Ireland)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Féach ar fhéilire na bliana 2025 d'Éirinn. Is féidir leat laethanta saoire agus ócáidí in Éirinn i mbliain fhéilire 2025 a fheiceáil."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/ie/calendar-2025-ireland.html" />
 <link
@@ -529,6 +633,135 @@
                 <div class="legend-item">25 Dec • Christmas Day</div>
                 <div class="legend-item">26 Dec • St. Stephen's Day</div>
             </div>
+
+            <h2>Laethanta Saoire Poiblí in Éirinn i gCalendár 2025</h2>
+
+<p>
+  Agus muid ag súil leis an mbliain 2025, tá sé tábhachtach na laethanta saoire poiblí sa gcalendár a thuiscint chun pleanáil a dhéanamh. Bíonn Éire ag ceiliúradh réimse leathan de laethanta saoire poiblí i gcaitheamh na bliana, agus cabhraíonn eolas ar na dátaí seo leat saoire agus ócáidí speisialta a eagrú. Seo thíos liosta mionsonraithe de na laethanta saoire poiblí go léir in Éirinn don bhliain 2025.
+</p>
+
+<h4>1. Lá Caille - 1 Eanáir 2025</h4>
+<p>
+  Marcálann Lá Caille tús na bliana nua i gCalendár 2025. Ceiliúrtar an lá seo ar fud na tíre le cruinnithe teaghlaigh, ceolchoirmeacha, agus réiteach spriocanna nua don bhliain atá amach romhainn.
+</p>
+
+<h4>2. Lá Fhéile Pádraig - 17 Márta 2025</h4>
+<p>
+  Is é Lá Fhéile Pádraig an lá náisiúnta in Éirinn, a cheiliúrtar ar an 17 Márta gach bliain. Tugann an lá seo ómós do Naomh Pádraig, a thug an Chríostaíocht go hÉirinn. Tá paráidí bríomhara, ceol traidisiúnta, agus taispeántais cultúrtha mar chuid den cheiliúradh.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Aoine an Chéasta - 18 Aibreán 2025</h4>
+<p>
+  Tugtar Aoine an Chéasta chun cuimhne an chéasadh Íosa Críost. Lá machnaimh agus paidir atá ann do Chríostaithe in Éirinn, le seirbhísí speisialta i séipéil ar fud na tíre.
+</p>
+
+<h4>4. Luan Cásca - 21 Aibreán 2025</h4>
+<p>
+  Ceiliúrtar Luan Cásca mar chuid den fhéile Cásca, an ócáid a dhéanann ceiliúradh ar aiséirí Íosa Críost. Is lá saoire poiblí é in Éirinn, agus bíonn teaghlaigh ag teacht le chéile le haghaidh béilí speisialta agus cluichí spraoi.
+</p>
+
+<h4>5. Lá Bealtaine - 5 Bealtaine 2025</h4>
+<p>
+  Marcálann Lá Bealtaine tús an tsamhraidh traidisiúnta in Éirinn. Tugtar ómós ar an lá seo do thraidisiúin Ghaelacha le tine chnámh agus imeachtaí cultúrtha in áiteanna áirithe.
+</p>
+
+<h4>6. Lá Saoire an tSamhraidh - 2 Meitheamh 2025</h4>
+<p>
+  Tugtar an t-aitheantas seo do thús an tsamhraidh i mí an Mheithimh. Ceiliúrtar le raon imeachtaí pobail agus teaghlaigh, chomh maith le haeráid níos teo ag cur leis an spraoi.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>7. Lá Saoire an Fhómhair - 4 Lúnasa 2025</h4>
+<p>
+  Is é Lá Saoire an Fhómhair an deis foirfe chun deireadh an tsamhraidh a cheiliúradh. Bíonn imeachtaí pobail agus imeachtaí spóirt mar chuid den fhéile seo.
+</p>
+
+<h4>8. Lá Cuimhneacháin an 1916 - 24 Márta 2025</h4>
+<p>
+  Déantar cuimhneamh ar Éirí Amach na Cásca 1916 ar an lá seo le searmanais phoiblí agus ómós do laochra na hÉireann a throid ar son neamhspleáchais.
+</p>
+
+<h4>9. Lá Saoire an Fhómhair - 27 Deireadh Fómhair 2025</h4>
+<p>
+  Ceiliúrtar Lá Saoire an Fhómhair mar dheireadh na bliana oibre traidisiúnta. Tugtar an deis do dhaoine scíth a ligean agus taitneamh a bhaint as an aimsir fómhair.
+</p>
+
+<h4>10. Lá Nollag - 25 Nollaig 2025</h4>
+<p>
+  Ceiliúrtar Lá Nollag mar lá breithe Íosa Críost. Is ócáid speisialta é do Chríostaithe, le cóisirí teaghlaigh, bronntanais, agus maisiúcháin áille cosúil le crainn Nollag.
+</p>
+
+<h4>11. Lá Fhéile Eoin - 24 Meitheamh 2025</h4>
+<p>
+  Marcálann Lá Fhéile Eoin traidisiúin ársa, lena n-áirítear tinte chnámh agus imeachtaí áitiúla. Ceiliúrtar é i roinnt áiteanna tuaithe.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>12. Lá na Saoirse - 21 Eanáir 2025</h4>
+<p>
+  Lá tábhachtach a cheiliúrann cearta polaitiúla agus saoirse phobail Éireannach.
+</p>
+
+<h4>13. Lá Saoire an Geimhridh - 29 Nollaig 2025</h4>
+<p>
+  Ceiliúrtar deireadh na bliana leis an lá saoire seo, ag tabhairt am do theaghlaigh agus cairde teacht le chéile.
+</p>
+
+<h4>14. Lá na Máthar - 30 Márta 2025</h4>
+<p>
+  Lá ceiliúrtha do gach máthair agus ról na máithreachais i gcultúr Éireannach.
+</p>
+
+<h4>15. Lá Fhéile Bríde - 1 Feabhra 2025</h4>
+<p>
+  Tugtar ómós do Naomh Bríd, a bhfuil baint aici le tús an earraigh, le paidreacha agus ceiliúradh cultúrtha.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
