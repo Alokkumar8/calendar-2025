@@ -1,541 +1,1474 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar for Year 2025 (Israel)</title>
+    <meta
+      name="description"
+      content="צפה בלוח השנה של ישראל לשנת 2025. ניתן לראות חגים ומועדים בלוח השנה של ישראל לשנת 2025."
+    />
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .ad-space {
+        width: 15%;
+        background-color: #ddd;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: #666;
+        min-height: 600px;
+      }
+      .calendar {
+        flex: 0 0 70%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        overflow-x: auto;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .months {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .month {
+        width: 32%;
+        margin-bottom: 20px;
+        min-width: 250px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        text-align: center;
+        padding: 5px;
+        font-size: 12px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .holiday {
+        background-color: #ffcccc;
+      }
+      .observance {
+        background-color: #ccffcc;
+      }
+      .legend {
+        margin-top: 20px;
+        font-size: 12px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .legend-item {
+        width: 33.33%;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+      }
+      .legend-color {
+        width: 10px;
+        height: 10px;
+        margin-right: 5px;
+        display: inline-block;
+      }
+      .logo {
+        text-align: right;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 1200px) {
         .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
+          flex-direction: column;
         }
         .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
+          width: 100%;
+          min-height: 100px;
+          margin-bottom: 20px;
+        }
+        .calendar {
+          width: 100%;
+        }
+        .month {
+          width: 100%;
+        }
+        .legend-item {
+          width: 50%;
+        }
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      footer nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow links to wrap onto new lines */
+        margin: 0;
+      }
+
+      footer nav ul li {
+        margin: 5px 15px;
+      }
+
+      footer nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Optional: Add a hover effect for the links */
+      footer nav ul li a:hover {
+        text-decoration: underline;
+      }
+
+      .internal-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+      }
+
+      .internal-links a {
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        color: #4a6da7;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        background-color: #ffffff;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .internal-links a:hover {
+        background-color: #e8f0fe;
+        color: #2c4a7c;
+      }
+
+      @media (max-width: 768px) {
+        .internal-links {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 10px;
+        }
+
+        .internal-links a {
+          font-size: 14px;
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .internal-links {
+          grid-template-columns: 1fr;
+        }
+
+        .internal-links a {
+          font-size: 14px;
+          padding: 10px;
+        }
+      }
+
+      country-select-wrapper {
+        max-width: 200px;
+        margin: 20px;
+      }
+
+      .country-select {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .country-select:focus {
+        outline: none;
+        border-color: #4a6da7;
+        box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+      }
+    </style>
+
+    <link
+      rel="canonical"
+      href="https://www.calendar-2025.org/il/calendar-2025-israel.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-us"
+      href="https://www.calendar-2025.org/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-af"
+      href="https://www.calendar-2025.org/af/calendar-2025-afghanistan.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-al"
+      href="https://www.calendar-2025.org/al/calendar-2025-albania.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-dz"
+      href="https://www.calendar-2025.org/dz/calendar-2025-algeria.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-as"
+      href="https://www.calendar-2025.org/as/calendar-2025-american-samoa.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ad"
+      href="https://www.calendar-2025.org/ad/calendar-2025-andorra.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ao"
+      href="https://www.calendar-2025.org/ao/calendar-2025-angola.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ai"
+      href="https://www.calendar-2025.org/ai/calendar-2025-anguilla.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ag"
+      href="https://www.calendar-2025.org/ag/calendar-2025-antigua-and-barbuda.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ar"
+      href="https://www.calendar-2025.org/ar/calendar-2025-argentina.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-am"
+      href="https://www.calendar-2025.org/am/calendar-2025-armenia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-aw"
+      href="https://www.calendar-2025.org/aw/calendar-2025-aruba.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-au"
+      href="https://www.calendar-2025.org/au/calendar-2025-australia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-at"
+      href="https://www.calendar-2025.org/at/calendar-2025-austria.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-az"
+      href="https://www.calendar-2025.org/az/calendar-2025-azerbaijan.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-bs"
+      href="https://www.calendar-2025.org/bs/calendar-2025-bahamas.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ar-bh"
+      href="https://www.calendar-2025.org/bh/calendar-2025-bahrain.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="bn-bd"
+      href="https://www.calendar-2025.org/bd/calendar-2025-bangladesh.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="bg-bg"
+      href="https://www.calendar-2025.org/bg/calendar-2025-bulgaria.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-ca"
+      href="https://www.calendar-2025.org/ca/calendar-2025-canada.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="zh-cn"
+      href="https://www.calendar-2025.org/cn/calendar-2025-china.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="cs-cz"
+      href="https://www.calendar-2025.org/cz/calendar-2025-Czechia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="da-dk"
+      href="https://www.calendar-2025.org/dk/calendar-2025-denmark.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="et-ee"
+      href="https://www.calendar-2025.org/ee/calendar-2025-estonia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sv-fi"
+      href="https://www.calendar-2025.org/fi/calendar-2025-finland.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="fr-fr"
+      href="https://www.calendar-2025.org/fr/calendar-2025-france.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="de-de"
+      href="https://www.calendar-2025.org/de/calendar-2025-germany.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="el-gr"
+      href="https://www.calendar-2025.org/gr/calendar-2025-greece.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="hu-hu"
+      href="https://www.calendar-2025.org/hu/calendar-2025-hungary.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-in"
+      href="https://www.calendar-2025.org/in/calendar-2025-india.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="id-id"
+      href="https://www.calendar-2025.org/id/calendar-2025-indonesia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ga-ie"
+      href="https://www.calendar-2025.org/ie/calendar-2025-ireland.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="he-il"
+      href="https://www.calendar-2025.org/il/calendar-2025-israel.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="it-it"
+      href="https://www.calendar-2025.org/it/calendar-2025-italy.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="lv-lv"
+      href="https://www.calendar-2025.org/lv/calendar-2025-latvia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="nl-nl"
+      href="https://www.calendar-2025.org/nl/calendar-2025-Netherlands.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-nz"
+      href="https://www.calendar-2025.org/nz/calendar-2025-new-zealand.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="no-no"
+      href="https://www.calendar-2025.org/no/calendar-2025-norway.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="pt-pt"
+      href="https://www.calendar-2025.org/pt/calendar-2025-Portugal.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ro-ro"
+      href="https://www.calendar-2025.org/ro/calendar-2025-romania.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sk-sk"
+      href="https://www.calendar-2025.org/sk/calendar-2025-slovakia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en-sl"
+      href="https://www.calendar-2025.org/sl/calendar-2025-slovenia.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="es-es"
+      href="https://www.calendar-2025.org/es/calendar-2025-spain.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="sv-se"
+      href="https://www.calendar-2025.org/se/calendar-2025-sweden.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="th-th"
+      href="https://www.calendar-2025.org/th/calendar-2025-thailand.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr-tr"
+      href="https://www.calendar-2025.org/tr/calendar-2025-turkey.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="uk-ua"
+      href="https://www.calendar-2025.org/ua/calendar-2025-ukraine.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ar-ae"
+      href="https://www.calendar-2025.org/ae/calendar-2025-united-arab-emirates.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="vi-vn"
+      href="https://www.calendar-2025.org/vn/calendar-2025-vietnam.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.calendar-2025.org/"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="ad-space">
+        <div
+          style="
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
+            border: 2px dashed #999;
             text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
+          "
+        >
+          <p>Banner Ad Space<br />(15% width)</p>
+        </div>
+      </div>
+      <div class="calendar">
+        <div class="logo">timeanddate</div>
+        <h1>Calendar for Year 2025 (Israel)</h1>
+        <div class="months">
+          <div class="month">
+            <h2>January</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="holiday">1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>February</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td class="holiday">6</td>
+                <td>7</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>March</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td class="holiday">22</td>
+              </tr>
+              <tr>
+                <td class="holiday">23</td>
+                <td class="holiday">24</td>
+                <td class="holiday">25</td>
+                <td class="holiday">26</td>
+                <td class="holiday">27</td>
+                <td class="holiday">28</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>April</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td class="holiday">18</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td class="holiday">20</td>
+                <td class="holiday">21</td>
+                <td>22</td>
+                <td>23</td>
+                <td class="holiday">24</td>
+                <td class="holiday">25</td>
+                <td>26</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>May</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td class="holiday">7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>June</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td class="holiday">2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>29</td>
+                <td>30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>July</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td class="holiday">24</td>
+                <td>25</td>
+                <td>26</td>
+              </tr>
+              <tr>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>August</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+              </tr>
+              <tr>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>September</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td class="holiday">14</td>
+                <td class="holiday">15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td class="holiday">20</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>22</td>
+                <td class="holiday">23</td>
+                <td class="holiday">24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td class="holiday">28</td>
+                <td class="holiday">29</td>
+                <td>30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>October</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td class="holiday">4</td>
+              </tr>
+              <tr>
+                <td class="holiday">5</td>
+                <td class="holiday">6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td class="holiday">27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>November</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+              </tr>
+              <tr>
+                <td>30</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="month">
+            <h2>December</h2>
+            <table>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td class="holiday">25</td>
+                <td class="holiday">26</td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+                <td>31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="legend">
+          <h3>Holidays & Observances</h3>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #ffcccc"></span>
+            חג רשמי (Public Holiday)
+          </div>
+          <div class="legend-item">
+            <span class="legend-color" style="background-color: #ccffcc"></span>
+            יום מיוחד (Observance)
+          </div>
+          <div class="legend-item">
+            1 ינו' • ראש השנה האזרחית (New Year's Day)
+          </div>
+          <div class="legend-item">22 מרץ - 28 מרץ • פסח (Passover)</div>
+          <div class="legend-item">
+            24 אפר' • יום העצמאות (Independence Day)
+          </div>
+          <div class="legend-item">25 אפר' • שבת (Shabbat)</div>
+          <div class="legend-item">
+            7 מאי • יום הזיכרון לחללי מערכות ישראל (Memorial Day)
+          </div>
+          <div class="legend-item">24 יול' • תשעה באב (Tisha B'Av)</div>
+          <div class="legend-item">
+            14 ספט' - 15 ספט' • ראש השנה (Rosh Hashana)
+          </div>
+          <div class="legend-item">23 ספט' • יום כיפור (Yom Kippur)</div>
+          <div class="legend-item">28 ספט' - 29 ספט' • סוכות (Sukkot)</div>
+          <div class="legend-item">
+            4 אוק' - 6 אוק' • שמחת תורה (Simchat Torah)
+          </div>
+        </div>
+
+        <h2>חגים רשמיים בישראל בלוח השנה 2025</h2>
+
+        <p>
+          כשאנו מסתכלים קדימה לשנת 2025, חשוב להכיר את החגים הרשמיים במהלך השנה
+          לצורך תכנון חופשות ואירועים מיוחדים. ישראל מציינת מגוון חגים לאומיים
+          ודתיים לאורך השנה, והיכרות עם תאריכים אלה יכולה לעזור בארגון לוח
+          הזמנים. להלן רשימה מפורטת של כל החגים הרשמיים בישראל לשנת 2025.
+        </p>
+
+        <h4>1. ראש השנה - 2-3 באוקטובר 2025</h4>
+        <p>
+          ראש השנה הוא חג יהודי המציין את תחילת השנה העברית החדשה. זהו זמן של
+          חשבון נפש, תפילות, וארוחות חגיגיות הכוללות מאכלים מסורתיים כמו תפוח
+          בדבש להמתקת השנה החדשה.
+        </p>
+        <img
+          src="../images/calendar-image-1.jpg"
+          alt="image of a desk calendar"
+        />
+        <h4>2. יום כיפור - 11 באוקטובר 2025</h4>
+        <p>
+          יום כיפור הוא היום הקדוש ביותר ביהדות, בו רבים צמים ומתפללים בבתי
+          הכנסת. זהו יום של סליחה, כפרה וחשבון נפש, שבו המדינה כמעט כולה נעצרת
+          ואין תחבורה ציבורית או שידורי טלוויזיה.
+        </p>
+
+        <h4>3. סוכות - 16-22 באוקטובר 2025</h4>
+        <p>
+          חג הסוכות נמשך שבעה ימים והוא מציין את זכר יציאת בני ישראל ממצרים.
+          משפחות בונות סוכות ומתגוררות בהן חלק מהחג, ומתקיימים אירועים חגיגיים
+          רבים.
+        </p>
+
+        <h4>4. חנוכה - 24-31 בדצמבר 2025</h4>
+        <p>
+          חנוכה, חג האורות, נחגג במשך שמונה ימים להנצחת נס פך השמן. הדלקת נרות
+          חנוכה, אכילת סופגניות ולביבות, ומשחק בסביבון הם חלק מהמנהגים המרכזיים
+          של החג.
+        </p>
+        <img
+          src="../images/calendar-image-2.jpg"
+          alt="image of a desk calendar"
+        />
+        <h4>5. פורים - 14 במרץ 2025</h4>
+        <p>
+          חג פורים הוא חג של שמחה והילולה לציון הצלת היהודים בפרס בעת העתיקה.
+          החג כולל קריאת מגילת אסתר, תחפושות, מסיבות וחלוקת משלוחי מנות.
+        </p>
+
+        <h4>6. פסח - 12-19 באפריל 2025</h4>
+        <p>
+          פסח הוא אחד החגים המרכזיים ביהדות, המציין את יציאת מצרים. במהלך החג
+          נאכל מצות במקום לחם, מתקיימים סדרי פסח משפחתיים, ונמנעים מאכילת חמץ.
+        </p>
+
+        <h4>7. יום הזיכרון לשואה ולגבורה - 23 באפריל 2025</h4>
+        <p>
+          יום הזיכרון לשואה ולגבורה מוקדש לזכרם של ששת מיליון היהודים שנרצחו
+          בשואה. נערכים טקסי זיכרון, נשמעת צפירת דומייה, ונערכים אירועים
+          חינוכיים לזכר הקורבנות.
+        </p>
+
+        <h4>8. יום הזיכרון לחללי מערכות ישראל - 5 במאי 2025</h4>
+        <p>
+          יום הזיכרון לחללי מערכות ישראל מוקדש לזכר החיילים שנפלו במלחמות ישראל
+          ולנפגעי פעולות האיבה. טקסים ממלכתיים נערכים בכל רחבי הארץ, וצפירה
+          נשמעת לזכרם.
+        </p>
+
+        <h4>9. יום העצמאות - 6 במאי 2025</h4>
+        <p>
+          יום העצמאות מציין את הקמת מדינת ישראל בשנת 1948. לאחר יום הזיכרון,
+          המדינה עוברת לחגיגות גדולות הכוללות מופעי זיקוקים, מסיבות רחוב וטיולים
+          בטבע.
+        </p>
+
+        <h4>10. ל"ג בעומר - 25 במאי 2025</h4>
+        <p>
+          ל"ג בעומר הוא חג המציין את סיום תקופת האבלות של ספירת העומר, ולפי
+          המסורת, את יום פטירתו של רבי שמעון בר יוחאי. מדורות נדלקות ברחבי הארץ,
+          ותלמידים יוצאים לטיולים.
+        </p>
+
+        <h4>11. שבועות - 2 ביוני 2025</h4>
+        <p>
+          חג השבועות מציין את מתן התורה לעם ישראל בהר סיני. במהלך החג נוהגים
+          לאכול מאכלי חלב, לקשט את הבתים בפרחים, וללמוד תורה במשך כל הלילה.
+        </p>
+        <img
+          src="../images/calendar-image-3.jpg"
+          alt="image of a desk calendar"
+        />
+        <h4>12. תשעה באב - 3 באוגוסט 2025</h4>
+        <p>
+          תשעה באב הוא יום צום ואבל לזכר חורבן בית המקדש הראשון והשני. במהלך
+          היום נמנעים מאכילה ושתייה, ונוהגים לקרוא את מגילת איכה בבתי הכנסת.
+        </p>
+
+        <h4>13. ט"ו באב - 10 באוגוסט 2025</h4>
+        <p>
+          ט"ו באב הוא חג האהבה היהודי, הנחשב כיום חג רומנטי בישראל. זוגות רבים
+          מנצלים את היום כדי לחגוג אהבה ולצאת לאירועים מיוחדים.
+        </p>
+
+        <h4>14. ראש השנה לאילנות (ט"ו בשבט) - 13 בפברואר 2025</h4>
+        <p>
+          ט"ו בשבט הוא חג המציין את ראש השנה לאילנות. נוהגים לשתול עצים, לאכול
+          פירות יבשים, ולחגוג את הקשר בין האדם לטבע.
+        </p>
+
+        <h4>15. צום גדליה - 29 בספטמבר 2025</h4>
+        <p>
+          צום גדליה הוא יום צום לזכר רציחתו של גדליהו בן אחיקם, שהיה נציב יהודה
+          לאחר חורבן בית המקדש הראשון. זהו יום של אבל וזיכרון, והוא נמשך מעלות
+          השחר עד צאת הכוכבים.
+        </p>
+
+        <div class="internal-links">
+          <a href="../af/calendar-2025-afghanistan.html"
+            >تقویم ۲۰۲۵ (افغانستان)</a
+          >
+          <a href="../al/calendar-2025-albania.html"
+            >Kalendari 2025 (Shqipëri)</a
+          >
+          <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+          <a href="../as/calendar-2025-american-samoa.html"
+            >Calendar 2025 (American Samoa)</a
+          >
+          <a href="../ad/calendar-2025-andorra.html"
+            >Calendari 2025 (Andorra)</a
+          >
+          <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+          <a href="../ai/calendar-2025-anguilla.html"
+            >Calendar 2025 (Anguilla)</a
+          >
+          <a href="../ag/calendar-2025-antigua-and-barbuda.html"
+            >Calendar 2025 (Antigua and Barbuda)</a
+          >
+          <a href="../ar/calendar-2025-argentina.html"
+            >Calendario 2025 (Argentina)</a
+          >
+          <a href="../am/calendar-2025-armenia.html"
+            >2025 թվականի օրացույցը (Հայաստան)</a
+          >
+          <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+          <a href="../au/calendar-2025-australia.html"
+            >Calendar 2025 (Australia)</a
+          >
+          <a href="../at/calendar-2025-austria.html"
+            >Kalender 2025 (Österreich)</a
+          >
+          <a href="../az/calendar-2025-azerbaijan.html"
+            >2025 Təqvimi (Azərbaycan)</a
+          >
+          <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+          <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+          <a href="../bd/calendar-2025-bangladesh.html"
+            >২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a
+          >
+          <a href="../bg/calendar-2025-bulgaria.html"
+            >Календар 2025 (България)</a
+          >
+          <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+          <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+          <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+          <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+          <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+          <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+        </div>
+
+        <footer>
+          <div>
+            <p>&copy; calendar-2025.org</p>
+            <nav>
+              <ul>
+                <li><a href="../about-us.html">About</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+                <li><a href="../contact-us.html">Contact</a></li>
+                <li><a href="../login.html">Login</a></li>
+                <li><a href="../api-docs.html">API</a></li>
+                <li><a href="../api-status.html">API status</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                <li>
+                  <a href="../terms-and-conditions.html">Terms of Service</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
+      </div>
+      <div class="ad-space">
+        <div
+          style="
             width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
+            height: 100%;
             display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
+            justify-content: center;
             align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
-
-<link rel="canonical" href="https://www.calendar-2025.org/il/calendar-2025-israel.html" />
-<link
-  rel="alternate"
-  hreflang="en-us"
-  href="https://www.calendar-2025.org/"
-/>
-<link
-  rel="alternate"
-  hreflang="en-af"
-  href="https://www.calendar-2025.org/af/calendar-2025-afghanistan.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-al"
-  href="https://www.calendar-2025.org/al/calendar-2025-albania.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-dz"
-  href="https://www.calendar-2025.org/dz/calendar-2025-algeria.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-as"
-  href="https://www.calendar-2025.org/as/calendar-2025-american-samoa.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ad"
-  href="https://www.calendar-2025.org/ad/calendar-2025-andorra.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ao"
-  href="https://www.calendar-2025.org/ao/calendar-2025-angola.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ai"
-  href="https://www.calendar-2025.org/ai/calendar-2025-anguilla.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ag"
-  href="https://www.calendar-2025.org/ag/calendar-2025-antigua-and-barbuda.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ar"
-  href="https://www.calendar-2025.org/ar/calendar-2025-argentina.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-am"
-  href="https://www.calendar-2025.org/am/calendar-2025-armenia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-aw"
-  href="https://www.calendar-2025.org/aw/calendar-2025-aruba.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-au"
-  href="https://www.calendar-2025.org/au/calendar-2025-australia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-at"
-  href="https://www.calendar-2025.org/at/calendar-2025-austria.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-az"
-  href="https://www.calendar-2025.org/az/calendar-2025-azerbaijan.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-bs"
-  href="https://www.calendar-2025.org/bs/calendar-2025-bahamas.html"
-/>
-<link
-  rel="alternate"
-  hreflang="ar-bh"
-  href="https://www.calendar-2025.org/bh/calendar-2025-bahrain.html"
-/>
-<link
-  rel="alternate"
-  hreflang="bn-bd"
-  href="https://www.calendar-2025.org/bd/calendar-2025-bangladesh.html"
-/>
-<link
-  rel="alternate"
-  hreflang="bg-bg"
-  href="https://www.calendar-2025.org/bg/calendar-2025-bulgaria.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-ca"
-  href="https://www.calendar-2025.org/ca/calendar-2025-canada.html"
-/>
-<link
-  rel="alternate"
-  hreflang="zh-cn"
-  href="https://www.calendar-2025.org/cn/calendar-2025-china.html"
-/>
-<link
-  rel="alternate"
-  hreflang="cs-cz"
-  href="https://www.calendar-2025.org/cz/calendar-2025-Czechia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="da-dk"
-  href="https://www.calendar-2025.org/dk/calendar-2025-denmark.html"
-/>
-<link
-  rel="alternate"
-  hreflang="et-ee"
-  href="https://www.calendar-2025.org/ee/calendar-2025-estonia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="sv-fi"
-  href="https://www.calendar-2025.org/fi/calendar-2025-finland.html"
-/>
-<link
-  rel="alternate"
-  hreflang="fr-fr"
-  href="https://www.calendar-2025.org/fr/calendar-2025-france.html"
-/>
-<link
-  rel="alternate"
-  hreflang="de-de"
-  href="https://www.calendar-2025.org/de/calendar-2025-germany.html"
-/>
-<link
-  rel="alternate"
-  hreflang="el-gr"
-  href="https://www.calendar-2025.org/gr/calendar-2025-greece.html"
-/>
-<link
-  rel="alternate"
-  hreflang="hu-hu"
-  href="https://www.calendar-2025.org/hu/calendar-2025-hungary.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-in"
-  href="https://www.calendar-2025.org/in/calendar-2025-india.html"
-/>
-<link
-  rel="alternate"
-  hreflang="id-id"
-  href="https://www.calendar-2025.org/id/calendar-2025-indonesia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="ga-ie"
-  href="https://www.calendar-2025.org/ie/calendar-2025-ireland.html"
-/>
-<link
-  rel="alternate"
-  hreflang="he-il"
-  href="https://www.calendar-2025.org/il/calendar-2025-israel.html"
-/>
-<link
-  rel="alternate"
-  hreflang="it-it"
-  href="https://www.calendar-2025.org/it/calendar-2025-italy.html"
-/>
-<link
-  rel="alternate"
-  hreflang="lv-lv"
-  href="https://www.calendar-2025.org/lv/calendar-2025-latvia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="nl-nl"
-  href="https://www.calendar-2025.org/nl/calendar-2025-Netherlands.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-nz"
-  href="https://www.calendar-2025.org/nz/calendar-2025-new-zealand.html"
-/>
-<link
-  rel="alternate"
-  hreflang="no-no"
-  href="https://www.calendar-2025.org/no/calendar-2025-norway.html"
-/>
-<link
-  rel="alternate"
-  hreflang="pt-pt"
-  href="https://www.calendar-2025.org/pt/calendar-2025-Portugal.html"
-/>
-<link
-  rel="alternate"
-  hreflang="ro-ro"
-  href="https://www.calendar-2025.org/ro/calendar-2025-romania.html"
-/>
-<link
-  rel="alternate"
-  hreflang="sk-sk"
-  href="https://www.calendar-2025.org/sk/calendar-2025-slovakia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="en-sl"
-  href="https://www.calendar-2025.org/sl/calendar-2025-slovenia.html"
-/>
-<link
-  rel="alternate"
-  hreflang="es-es"
-  href="https://www.calendar-2025.org/es/calendar-2025-spain.html"
-/>
-<link
-  rel="alternate"
-  hreflang="sv-se"
-  href="https://www.calendar-2025.org/se/calendar-2025-sweden.html"
-/>
-<link
-  rel="alternate"
-  hreflang="th-th"
-  href="https://www.calendar-2025.org/th/calendar-2025-thailand.html"
-/>
-<link
-  rel="alternate"
-  hreflang="tr-tr"
-  href="https://www.calendar-2025.org/tr/calendar-2025-turkey.html"
-/>
-<link
-  rel="alternate"
-  hreflang="uk-ua"
-  href="https://www.calendar-2025.org/ua/calendar-2025-ukraine.html"
-/>
-<link
-  rel="alternate"
-  hreflang="ar-ae"
-  href="https://www.calendar-2025.org/ae/calendar-2025-united-arab-emirates.html"
-/>
-<link
-  rel="alternate"
-  hreflang="vi-vn"
-  href="https://www.calendar-2025.org/vn/calendar-2025-vietnam.html"
-/>
-<link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://www.calendar-2025.org/"
-/>
-</head>
-<body>
-    <div class="container">
-        <div class="ad-space">
-            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
-                <p>Banner Ad Space<br>(15% width)</p>
-            </div>
+            border: 2px dashed #999;
+            text-align: center;
+          "
+        >
+          <p>Banner Ad Space<br />(15% width)</p>
         </div>
-        <div class="calendar">
-            <div class="logo">timeanddate</div>
-            <h1>Calendar for Year 2025 (Israel)</h1>
-            <div class="months">
-                <div class="month">
-                    <h2>January</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td class="holiday">1</td><td>2</td><td>3</td><td>4</td></tr>
-                        <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-                        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
-                        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
-                        <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>February</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td class="holiday">6</td><td>7</td><td>8</td></tr>
-                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>March</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td class="holiday">22</td></tr>
-                        <tr><td class="holiday">23</td><td class="holiday">24</td><td class="holiday">25</td><td class="holiday">26</td><td class="holiday">27</td><td class="holiday">28</td><td>29</td></tr>
-                        <tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>April</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-                        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td class="holiday">18</td><td>19</td></tr>
-                        <tr><td class="holiday">20</td><td class="holiday">21</td><td>22</td><td>23</td><td class="holiday">24</td><td class="holiday">25</td><td>26</td></tr>
-                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>May</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-                        <tr><td>4</td><td>5</td><td>6</td><td class="holiday">7</td><td>8</td><td>9</td><td>10</td></tr>
-                        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-                        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-                        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>June</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td>1</td><td class="holiday">2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-                        <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-                        <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
-                        <tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-                        <tr><td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>July</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-                        <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-                        <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-                        <tr><td>20</td><td>21</td><td>22</td><td>23</td><td class="holiday">24</td><td>25</td><td>26</td></tr>
-                        <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>August</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-                        <tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-                        <tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-                        <tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-                        <tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-                        <tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>September</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-                        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-                        <tr><td class="holiday">14</td><td class="holiday">15</td><td>16</td><td>17</td><td>18</td><td>19</td><td class="holiday">20</td></tr>
-                        <tr><td>21</td><td>22</td><td class="holiday">23</td><td class="holiday">24</td><td>25</td><td>26</td><td>27</td></tr>
-                        <tr><td class="holiday">28</td><td class="holiday">29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>October</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td class="holiday">4</td></tr>
-                        <tr><td class="holiday">5</td><td class="holiday">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-                        <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
-                        <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
-                        <tr><td>26</td><td class="holiday">27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>November</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-                        <tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-                        <tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-                        <tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-                        <tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-                        <tr><td>30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-                <div class="month">
-                    <h2>December</h2>
-                    <table>
-                        <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
-                        <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-                        <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-                        <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
-                        <tr><td>21</td><td>22</td><td>23</td><td>24</td><td class="holiday">25</td><td class="holiday">26</td><td>27</td></tr>
-                        <tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
-                    </table>
-                </div>
-            </div>
-            <div class="legend">
-                <h3>Holidays & Observances</h3>
-                <div class="legend-item"><span class="legend-color" style="background-color: #ffcccc;"></span> חג רשמי (Public Holiday)</div>
-                <div class="legend-item"><span class="legend-color" style="background-color: #ccffcc;"></span> יום מיוחד (Observance)</div>
-                <div class="legend-item">1 ינו' • ראש השנה האזרחית (New Year's Day)</div>
-                <div class="legend-item">22 מרץ - 28 מרץ • פסח (Passover)</div>
-                <div class="legend-item">24 אפר' • יום העצמאות (Independence Day)</div>
-                <div class="legend-item">25 אפר' • שבת (Shabbat)</div>
-                <div class="legend-item">7 מאי • יום הזיכרון לחללי מערכות ישראל (Memorial Day)</div>
-                <div class="legend-item">24 יול' • תשעה באב (Tisha B'Av)</div>
-                <div class="legend-item">14 ספט' - 15 ספט' • ראש השנה (Rosh Hashana)</div>
-                <div class="legend-item">23 ספט' • יום כיפור (Yom Kippur)</div>
-                <div class="legend-item">28 ספט' - 29 ספט' • סוכות (Sukkot)</div>
-                <div class="legend-item">4 אוק' - 6 אוק' • שמחת תורה (Simchat Torah)</div>
-            </div>
-        </div>
-        <div class="ad-space">
-            <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
-                <p>Banner Ad Space<br>(15% width)</p>
-            </div>
-        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
-

@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2025. gada kalendārs (Latvija)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Vedi il calendario del 2025 della Lettonia. Puoi visualizzare le festività e le ricorrenze della Lettonia nel calendario dell'anno 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/lv/calendar-2025-latvia.html" />
 <link
@@ -532,6 +636,135 @@
                 <div class="legend-item">26. decembris • Otrie Ziemassvētki</div>
                 <div class="legend-item">31. decembris • Vecgada vakars</div>
             </div>
+
+            <h2>Latvijas valsts svētki 2025. gada kalendārā</h2>
+
+<p>
+  Plānojot 2025. gadu, ir svarīgi zināt galvenos valsts svētkus un brīvdienas. Latvijā gada laikā tiek atzīmēti dažādi svētki, un šo datumu pārzināšana palīdz labāk plānot atpūtu un īpašus notikumus. Zemāk ir detalizēts saraksts ar visām valsts svētku dienām Latvijā 2025. gadā.
+</p>
+
+<h4>1. Jaunais gads - 1. janvāris, 2025</h4>
+<p>
+  Jaunais gads iezīmē jauna gada sākumu. Cilvēki visā Latvijā to svin ar salūtu, ballītēm un kopā būšanu ģimenes un draugu lokā. Tas ir laiks jaunām cerībām un mērķiem.
+</p>
+
+<h4>2. Lielā piektdiena - 18. aprīlis, 2025</h4>
+<p>
+  Lielā piektdiena ir kristiešu svētki, kas piemin Jēzus Kristus krustā sišanu. Tā ir klusuma un pārdomu diena, kuru ievēro ticīgie visā Latvijā. Baznīcās notiek īpaši dievkalpojumi.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Lieldienas - 20. aprīlis, 2025</h4>
+<p>
+  Lieldienas ir viens no svarīgākajiem kristiešu svētkiem, kas simbolizē Kristus augšāmcelšanos. Latvieši svin ar olu krāsošanu, šūpošanos un tradicionālām maltītēm ģimenes lokā.
+</p>
+
+<h4>4. Darba svētki - 1. maijs, 2025</h4>
+<p>
+  Darba svētki jeb Starptautiskā darba diena tiek atzīmēta visā pasaulē. Latvijā šī diena ir brīvdiena, kad tiek godināti strādājošie un darba tiesību nozīme.
+</p>
+
+<h4>5. Latvijas Republikas Neatkarības atjaunošanas diena - 4. maijs, 2025</h4>
+<p>
+  4. maijā tiek svinēta Latvijas neatkarības atjaunošana 1990. gadā. Šajā dienā notiek svinīgi pasākumi, koncerti un parādes, lai atzīmētu Latvijas brīvību.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>6. Vasarsvētki - 8. jūnijs, 2025</h4>
+<p>
+  Vasarsvētki ir kristiešu svētki, kas atzīmē Svētā Gara nonākšanu pie mācekļiem. Daudzi latvieši šo dienu pavada lūgšanās un ģimenes lokā.
+</p>
+
+<h4>7. Jāņi - 23. jūnijs, 2025</h4>
+<p>
+  Jāņi ir viens no populārākajiem latviešu svētkiem, kas tiek svinēts ar ugunskuriem, dziesmām, vainagu pīšanu un svētku galdu. Tas ir gada īsākās nakts svētki, kurus atzīmē visa Latvija.
+</p>
+
+<h4>8. Latvijas Republikas proklamēšanas diena - 18. novembris, 2025</h4>
+<p>
+  18. novembris ir Latvijas valsts dzimšanas diena, kas tiek svinēta ar militāro parādi, koncertiem un svinīgiem pasākumiem visā valstī.
+</p>
+
+<h4>9. Ziemassvētku vakars - 24. decembris, 2025</h4>
+<p>
+  Ziemassvētku vakars ir svarīgs laiks, kad ģimenes sanāk kopā, iededz sveces, dzied dziesmas un gatavo tradicionālus latviešu ēdienus.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>10. Pirmie Ziemassvētki - 25. decembris, 2025</h4>
+<p>
+  Pirmie Ziemassvētki tiek svinēti ar dievkalpojumiem, dāvanām un ģimenes kopā sanākšanu. Šī diena simbolizē mīlestību un mieru.
+</p>
+
+<h4>11. Otrie Ziemassvētki - 26. decembris, 2025</h4>
+<p>
+  Otrie Ziemassvētki ir papildus brīvdiena, ko latvieši izmanto atpūtai un laika pavadīšanai ar tuviniekiem.
+</p>
+
+<h4>12. Lāčplēša diena - 11. novembris, 2025</h4>
+<p>
+  Lāčplēša dienā tiek pieminēti Latvijas brīvības cīnītāji. Tiek rīkotas lāpu gājieni un piemiņas pasākumi par godu kritušajiem karavīriem.
+</p>
+
+<h4>13. Mārtiņdiena - 10. novembris, 2025</h4>
+<p>
+  Mārtiņdiena iezīmē rudens beigas un ziemas sākumu. To tradicionāli svin ar masku gājieniem, dziesmām un dažādiem tautas rituāliem.
+</p>
+
+<h4>14. Meteņi - 23. februāris, 2025</h4>
+<p>
+  Meteņi ir tradicionāli latviešu svētki, kas iezīmē pavasara tuvošanos. Cilvēki mielojas ar pankūkām un piedalās jautrās aktivitātēs.
+</p>
+
+<h4>15. Pilsētu svētki (Dažādi datumi)</h4>
+<p>
+  Daudzas Latvijas pilsētas un novadi atzīmē savus vietējos svētkus ar koncertiem, tirdziņiem un dažādām kultūras aktivitātēm.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
