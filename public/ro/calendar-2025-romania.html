@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar pentru Anul 2025 (România)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Vezi calendarul României pentru anul 2025. Poți vizualiza sărbătorile legale și zilele comemorative din România în anul calendaristic 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/ro/calendar-2025-romania.html" />
 <link
@@ -531,6 +635,135 @@
                 <div class="legend-item">25 Dec • Crăciunul</div>
                 <div class="legend-item">26 Dec • A doua zi de Crăciun</div>
             </div>
+
+            <h2>Sărbători legale în România în calendarul anului 2025</h2>
+
+<p>
+  Pe măsură ce ne îndreptăm spre anul 2025, este important să cunoaștem principalele sărbători legale din calendar pentru o mai bună planificare. România are mai multe sărbători publice pe parcursul anului, iar cunoașterea acestor date vă poate ajuta să organizați vacanțele și evenimentele speciale. Mai jos este o listă detaliată a tuturor sărbătorilor legale din România pentru anul 2025.
+</p>
+
+<h4>1. Anul Nou - 1 ianuarie 2025</h4>
+<p>
+  Anul Nou marchează începutul noului an din calendarul 2025. Este o zi de sărbătoare, petreceri și rezoluții, în care oamenii își petrec timpul cu familia și prietenii, întâmpinând noul an cu speranță și optimism.
+</p>
+
+<h4>2. Anul Nou (a doua zi) - 2 ianuarie 2025</h4>
+<p>
+  A doua zi de Anul Nou este, de asemenea, o sărbătoare legală în România, oferindu-le oamenilor un răgaz suplimentar pentru a se bucura de sărbători și de momentele petrecute cu cei dragi.
+</p>
+
+<h4>3. Ziua Unirii Principatelor Române - 24 ianuarie 2025</h4>
+<p>
+  Ziua Unirii Principatelor Române comemorează unirea Moldovei și Țării Românești sub domnia lui Alexandru Ioan Cuza în 1859. Este o zi importantă pentru unitatea națională, marcată prin ceremonii și evenimente oficiale.
+</p>
+
+<h4>4. Vinerea Mare - 18 aprilie 2025</h4>
+<p>
+  Vinerea Mare este o zi de reculegere și rugăciune pentru creștini, marcând răstignirea lui Iisus Hristos. Multe persoane țin post și participă la slujbele religioase din biserici.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>5. Paștele Ortodox - 20 aprilie 2025</h4>
+<p>
+  Paștele este cea mai importantă sărbătoare creștină, celebrând Învierea lui Iisus Hristos. Tradițiile includ slujbe religioase, vopsirea ouălor roșii și mese festive în familie.
+</p>
+
+<h4>6. A doua zi de Paște - 21 aprilie 2025</h4>
+<p>
+  A doua zi de Paște este, de asemenea, o sărbătoare legală, oferindu-le românilor ocazia de a petrece mai mult timp cu familia și prietenii.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>7. Ziua Muncii - 1 mai 2025</h4>
+<p>
+  Ziua Muncii este o sărbătoare internațională dedicată drepturilor muncitorilor. În România, mulți oameni profită de această zi liberă pentru excursii și activități în aer liber.
+</p>
+
+<h4>8. Ziua Copilului - 1 iunie 2025</h4>
+<p>
+  Ziua Copilului este o sărbătoare dedicată celor mici, marcată prin evenimente speciale, spectacole și activități recreative organizate în întreaga țară.
+</p>
+
+<h4>9. Rusaliile - 8 iunie 2025</h4>
+<p>
+  Rusaliile comemorează coborârea Sfântului Duh asupra apostolilor. Este o sărbătoare religioasă importantă, însoțită de slujbe și obiceiuri tradiționale.
+</p>
+
+<h4>10. A doua zi de Rusalii - 9 iunie 2025</h4>
+<p>
+  A doua zi de Rusalii este, de asemenea, zi liberă în România, permițând oamenilor să continue sărbătorirea acestei zile importante din calendarul creștin.
+</p>
+
+<h4>11. Adormirea Maicii Domnului - 15 august 2025</h4>
+<p>
+  Adormirea Maicii Domnului este o sărbătoare religioasă majoră, dedicată Sfintei Fecioare Maria. Mulți credincioși participă la slujbe și pelerinaje la mănăstiri.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>12. Sfântul Andrei - 30 noiembrie 2025</h4>
+<p>
+  Sfântul Andrei este considerat ocrotitorul României. În această zi, sunt respectate numeroase tradiții și obiceiuri populare, fiind și o ocazie de sărbătoare pentru cei care poartă numele Andrei sau Andreea.
+</p>
+
+<h4>13. Ziua Națională a României - 1 decembrie 2025</h4>
+<p>
+  Ziua Națională a României marchează Marea Unire de la 1 decembrie 1918, când Transilvania s-a unit cu România. Evenimentul este sărbătorit prin parade militare, ceremonii oficiale și spectacole.
+</p>
+
+<h4>14. Crăciunul - 25 decembrie 2025</h4>
+<p>
+  Crăciunul este una dintre cele mai importante sărbători creștine, celebrând nașterea lui Iisus Hristos. Românii petrec această zi alături de familie, oferindu-și cadouri și bucurându-se de preparatele tradiționale.
+</p>
+
+<h4>15. A doua zi de Crăciun - 26 decembrie 2025</h4>
+<p>
+  A doua zi de Crăciun este, de asemenea, o zi liberă, în care românii continuă sărbătoarea alături de familie și prieteni, menținând spiritul festiv al acestei perioade speciale.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
