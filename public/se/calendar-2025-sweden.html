@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalender för år 2025 (Sverige)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Se kalendern för 2025 i Sverige. Du kan se helgdagar och högtider i Sverige under kalenderåret 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/se/calendar-2025-sweden.html" />
 <link
@@ -531,6 +635,137 @@
                 <div class="legend-item">25 Dec • Juldagen</div>
                 <div class="legend-item">26 Dec • Annandag jul</div>
             </div>
+
+
+            <h2>Allmänna helgdagar i Sverige i kalenderåret 2025</h2>
+
+<p>
+  När vi ser fram emot år 2025 är det viktigt att känna till de viktigaste allmänna helgdagarna för att kunna planera i förväg. Sverige har flera officiella helgdagar under året, och att vara medveten om dessa datum kan hjälpa dig att planera semestrar och speciella evenemang. Nedan följer en detaljerad lista över alla allmänna helgdagar i Sverige för år 2025.
+</p>
+
+<h4>1. Nyårsdagen - 1 januari 2025</h4>
+<p>
+  Nyårsdagen markerar början på det nya året i kalendern 2025. Dagen firas med festligheter, fyrverkerier och nyårslöften. Många svenskar samlas med familj och vänner för att välkomna det nya året.
+</p>
+
+<h4>2. Trettondedag jul - 6 januari 2025</h4>
+<p>
+  Trettondedag jul är en kristen högtid som firar de tre vise männens ankomst till Jesusbarnet. I Sverige är det en officiell helgdag där många njuter av en ledig dag.
+</p>
+
+<h4>3. Långfredagen - 18 april 2025</h4>
+<p>
+  Långfredagen är en viktig kristen högtid som markerar Jesu korsfästelse. Det är en dag för eftertanke och stillhet, och många deltar i gudstjänster i kyrkan.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>4. Påskdagen - 20 april 2025</h4>
+<p>
+  Påskdagen firar Jesu uppståndelse och är en av de viktigaste kristna högtiderna. Många familjer firar med påskägg, godis och traditionsenliga påskmåltider.
+</p>
+
+<h4>5. Annandag påsk - 21 april 2025</h4>
+<p>
+  Annandag påsk är en fortsättning på påskfirandet och en röd dag i Sverige. Många svenskar passar på att njuta av långhelgen.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>6. Första maj - 1 maj 2025</h4>
+<p>
+  Första maj är arbetarrörelsens dag och firas med demonstrationer och politiska tal runt om i landet. Det är en dag då arbetarnas rättigheter uppmärksammas.
+</p>
+
+<h4>7. Kristi himmelsfärdsdag - 29 maj 2025</h4>
+<p>
+  Kristi himmelsfärd firas 40 dagar efter påsk och markerar Jesu himmelsfärd enligt kristen tro. Många svenskar tar en långhelg under denna period.
+</p>
+
+<h4>8. Sveriges nationaldag - 6 juni 2025</h4>
+<p>
+  Sveriges nationaldag firas för att hedra minnet av dagen då Gustav Vasa blev kung 1523 och landet blev självständigt. Det är en dag fylld med firanden, flaggviftning och ceremonier.
+</p>
+
+<h4>9. Midsommarafton - 20 juni 2025</h4>
+<p>
+  Midsommarafton är en av de största traditionella högtiderna i Sverige. Firandet inkluderar majstångsresning, dans, sång och festligheter med sill, potatis och jordgubbar.
+</p>
+
+<h4>10. Midsommardagen - 21 juni 2025</h4>
+<p>
+  Midsommardagen är en officiell helgdag som infaller dagen efter midsommarafton. Den firas ofta med fortsatt samvaro med familj och vänner.
+</p>
+
+<h4>11. Alla helgons dag - 1 november 2025</h4>
+<p>
+  Alla helgons dag är en dag då man hedrar de avlidna. Många besöker kyrkogårdar för att tända ljus på gravar och minnas sina nära och kära.
+</p>
+
+<h4>12. Julafton - 24 december 2025</h4>
+<p>
+  Julafton är den största högtiden i Sverige, då familjer samlas för att fira med julmat, julklappar och Kalle Anka på tv. Tomten kommer ofta med presenter till barnen.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>13. Juldagen - 25 december 2025</h4>
+<p>
+  Juldagen firar Jesu födelse och är en officiell helgdag i Sverige. Många går i julottan i kyrkan och firar med nära och kära.
+</p>
+
+<h4>14. Annandag jul - 26 december 2025</h4>
+<p>
+  Annandag jul är en fortsättning på julfirandet. Det är en dag då många svenskar umgås med familjen eller tar del av mellandagsrean.
+</p>
+
+<h4>15. Nyårsafton - 31 december 2025</h4>
+<p>
+  Nyårsafton markerar slutet på året och firas med festligheter, god mat och fyrverkerier. Vid midnatt skålar svenskar in det nya året med champagne och ser fram emot ett nytt år fyllt av möjligheter.
+</p>
+
+
+            <div class="internal-links">
+              <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+              <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+              <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+              <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+              <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+              <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+              <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+              <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+              <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+              <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+              <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+              <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+              <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+              <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+              <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+              <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+              <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+              <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+              <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+              <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+              <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+              <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+              <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+              <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+            </div>
+    
+            <footer>
+              <div>
+                <p>&copy; calendar-2025.org</p>
+                <nav>
+                  <ul>
+                    <li><a href="../about-us.html">About</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contact-us.html">Contact</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                    <li><a href="../api-docs.html">API</a></li>
+                    <li><a href="../api-status.html">API status</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li>
+                      <a href="../terms-and-conditions.html">Terms of Service</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">

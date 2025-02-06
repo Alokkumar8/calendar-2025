@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lịch năm 2025 (Việt Nam)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="See calendar of 2025 of Vietnam. You can view holidays and observances of Vietnam in calendar year 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/vn/calendar-2025-vietnam.html" />
 <link
@@ -523,6 +627,139 @@
                 <div class="legend-item">1 Th5 • Ngày Quốc tế Lao động</div>
                 <div class="legend-item">2 Th9 • Quốc khánh</div>
             </div>
+
+
+            <h2>Các Ngày Lễ Công Cộng tại Việt Nam trong Năm 2025</h2>
+
+<p>
+  Khi chúng ta hướng tới năm 2025, việc hiểu rõ các ngày lễ quan trọng trong năm là rất cần thiết cho kế hoạch cá nhân và công việc. Việt Nam có nhiều ngày lễ công cộng trong suốt năm, và nắm bắt được những ngày này sẽ giúp bạn sắp xếp kỳ nghỉ và sự kiện đặc biệt. Dưới đây là danh sách chi tiết các ngày lễ tại Việt Nam trong năm 2025.
+</p>
+
+<h4>1. Tết Dương Lịch - Ngày 1 tháng 1 năm 2025</h4>
+<p>
+  Tết Dương Lịch đánh dấu ngày đầu tiên của năm mới theo lịch quốc tế. Đây là thời điểm để chào đón năm mới với các hoạt động lễ hội, pháo hoa và tụ tập cùng gia đình, bạn bè.
+</p>
+
+<h4>2. Tết Nguyên Đán - Ngày 29 tháng 1 đến 4 tháng 2 năm 2025</h4>
+<p>
+  Tết Nguyên Đán là lễ hội quan trọng nhất trong năm của người Việt Nam, đánh dấu sự khởi đầu của năm mới âm lịch. Người dân tổ chức sum vầy gia đình, dâng lễ tổ tiên, đi chùa cầu may và tham gia các hoạt động truyền thống.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Ngày Giỗ Tổ Hùng Vương - Ngày 10 tháng 4 năm 2025</h4>
+<p>
+  Ngày Giỗ Tổ Hùng Vương được tổ chức để tưởng nhớ các Vua Hùng, những người có công dựng nước. Nhiều hoạt động lễ hội truyền thống và lễ dâng hương diễn ra tại Đền Hùng, tỉnh Phú Thọ.
+</p>
+
+<h4>4. Ngày Giải Phóng Miền Nam - Ngày 30 tháng 4 năm 2025</h4>
+<p>
+  Ngày 30 tháng 4 đánh dấu sự kiện thống nhất đất nước vào năm 1975. Đây là một trong những ngày lễ quan trọng nhất tại Việt Nam, thường được tổ chức với các chương trình diễu hành, lễ hội và bắn pháo hoa.
+</p>
+
+<h4>5. Ngày Quốc tế Lao động - Ngày 1 tháng 5 năm 2025</h4>
+<p>
+  Ngày Quốc tế Lao động được tổ chức trên toàn thế giới để tôn vinh công nhân và những đóng góp của họ cho xã hội. Tại Việt Nam, đây là ngày nghỉ lễ chính thức, nhiều hoạt động diễu hành và sự kiện văn hóa được tổ chức.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>6. Ngày Quốc khánh - Ngày 2 tháng 9 năm 2025</h4>
+<p>
+  Ngày Quốc khánh kỷ niệm Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập vào năm 1945. Đây là một ngày lễ trọng đại với nhiều hoạt động kỷ niệm, lễ diễu hành và bắn pháo hoa trên khắp cả nước.
+</p>
+
+<h4>7. Ngày Quốc tế Phụ nữ - Ngày 8 tháng 3 năm 2025</h4>
+<p>
+  Ngày Quốc tế Phụ nữ được tổ chức nhằm tôn vinh vai trò và đóng góp của phụ nữ trong xã hội. Nhiều sự kiện tôn vinh và hoạt động cộng đồng được tổ chức để ghi nhận công lao của phụ nữ.
+</p>
+
+<h4>8. Lễ Vu Lan - Ngày 9 tháng 8 năm 2025</h4>
+<p>
+  Lễ Vu Lan là ngày lễ lớn trong Phật giáo, nhằm báo hiếu cha mẹ và tổ tiên. Người dân thường đi chùa cầu nguyện và tham gia các hoạt động từ thiện trong dịp này.
+</p>
+
+<h4>9. Trung Thu - Ngày 6 tháng 9 năm 2025</h4>
+<p>
+  Tết Trung Thu là ngày hội của trẻ em với các hoạt động rước đèn, phá cỗ, múa lân và thưởng thức bánh Trung Thu. Đây cũng là dịp để gia đình quây quần bên nhau.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>10. Ngày Nhà giáo Việt Nam - Ngày 20 tháng 11 năm 2025</h4>
+<p>
+  Ngày Nhà giáo Việt Nam là dịp để học sinh, sinh viên tri ân thầy cô giáo. Nhiều hoạt động kỷ niệm và tặng hoa, quà tri ân giáo viên được tổ chức trong ngày này.
+</p>
+
+<h4>11. Ngày Thương binh Liệt sĩ - Ngày 27 tháng 7 năm 2025</h4>
+<p>
+  Ngày Thương binh Liệt sĩ là dịp để tưởng nhớ và tri ân những người đã hy sinh vì độc lập dân tộc. Nhiều hoạt động tri ân, thắp nến tưởng niệm diễn ra trên cả nước.
+</p>
+
+<h4>12. Ngày Gia đình Việt Nam - Ngày 28 tháng 6 năm 2025</h4>
+<p>
+  Ngày Gia đình Việt Nam tôn vinh giá trị của gia đình, là dịp để các thành viên sum họp và thể hiện tình yêu thương dành cho nhau.
+</p>
+
+<h4>13. Lễ Phật Đản - Ngày 12 tháng 5 năm 2025</h4>
+<p>
+  Lễ Phật Đản là ngày kỷ niệm ngày sinh của Đức Phật Thích Ca Mâu Ni. Các hoạt động chính bao gồm lễ tắm Phật, tụng kinh, làm từ thiện và các nghi thức Phật giáo.
+</p>
+
+<h4>14. Tết Trung Nguyên - Ngày 15 tháng 7 năm 2025</h4>
+<p>
+  Tết Trung Nguyên hay Rằm tháng Bảy là ngày để người dân cúng cô hồn và báo hiếu tổ tiên. Đây là một trong những ngày lễ quan trọng trong tín ngưỡng dân gian Việt Nam.
+</p>
+
+<h4>15. Lễ hội Ok Om Bok (Của người Khmer) - Ngày 10 tháng 11 năm 2025</h4>
+<p>
+  Lễ hội Ok Om Bok của người Khmer Nam Bộ nhằm tạ ơn thần Mặt Trăng sau mùa thu hoạch. Nhiều hoạt động văn hóa, nghi lễ và đua ghe ngo được tổ chức để chào mừng lễ hội.
+</p>
+
+
+
+            <div class="internal-links">
+              <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+              <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+              <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+              <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+              <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+              <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+              <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+              <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+              <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+              <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+              <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+              <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+              <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+              <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+              <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+              <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+              <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+              <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+              <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+              <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+              <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+              <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+              <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+              <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+            </div>
+    
+            <footer>
+              <div>
+                <p>&copy; calendar-2025.org</p>
+                <nav>
+                  <ul>
+                    <li><a href="../about-us.html">About</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contact-us.html">Contact</a></li>
+                    <li><a href="../login.html">Login</a></li>
+                    <li><a href="../api-docs.html">API</a></li>
+                    <li><a href="../api-status.html">API status</a></li>
+                    <li><a href="../blog.html">Blog</a></li>
+                    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                    <li>
+                      <a href="../terms-and-conditions.html">Terms of Service</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </footer>
+
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">

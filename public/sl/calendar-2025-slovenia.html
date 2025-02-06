@@ -4,116 +4,220 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Koledar za leto 2025 (Slovenija)</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: flex;
-            width: 100%;
-            max-width: none;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .ad-space {
-            width: 15%;
-            background-color: #ddd;
-            padding: 20px;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 14px;
-            color: #666;
-            min-height: 600px;
-        }
-        .calendar {
-            flex: 0 0 70%;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
-            overflow-x: auto;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .months {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .month {
-            width: 32%;
-            margin-bottom: 20px;
-            min-width: 250px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            text-align: center;
-            padding: 5px;
-            font-size: 12px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .holiday {
-            background-color: #ffcccc;
-        }
-        .observance {
-            background-color: #ccffcc;
-        }
-        .legend {
-            margin-top: 20px;
-            font-size: 12px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .legend-item {
-            width: 33.33%;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .legend-color {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
-            display: inline-block;
-        }
-        .logo {
-            text-align: right;
-            margin-bottom: 10px;
-        }
-        @media (max-width: 1200px) {
-            .container {
-                flex-direction: column;
-            }
-            .ad-space {
-                width: 100%;
-                min-height: 100px;
-                margin-bottom: 20px;
-            }
-            .calendar {
-                width: 100%;
-            }
-            .month {
-                width: 100%;
-            }
-            .legend-item {
-                width: 50%;
-            }
-        }
-    </style>
+    <meta
+    name="description"
+    content="Oglejte si koledar Slovenije za leto 2025. V njem lahko pregledate praznike in spominske dneve v koledarskem letu 2025."
+    />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .ad-space {
+      width: 15%;
+      background-color: #ddd;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: #666;
+      min-height: 600px;
+    }
+    .calendar {
+      flex: 0 0 70%;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .months {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .month {
+      width: 32%;
+      margin-bottom: 20px;
+      min-width: 250px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 5px;
+      font-size: 12px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .holiday {
+      background-color: #ffcccc;
+    }
+    .observance {
+      background-color: #ccffcc;
+    }
+    .legend {
+      margin-top: 20px;
+      font-size: 12px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      width: 33.33%;
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
+      display: inline-block;
+    }
+    .logo {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 1200px) {
+      .container {
+        flex-direction: column;
+      }
+      .ad-space {
+        width: 100%;
+        min-height: 100px;
+        margin-bottom: 20px;
+      }
+      .calendar {
+        width: 100%;
+      }
+      .month {
+        width: 100%;
+      }
+      .legend-item {
+        width: 50%;
+      }
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap; /* Allow links to wrap onto new lines */
+      margin: 0;
+    }
+
+    footer nav ul li {
+      margin: 5px 15px;
+    }
+
+    footer nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Optional: Add a hover effect for the links */
+    footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .internal-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #f5f5f5;
+    }
+
+    .internal-links a {
+      padding: 15px;
+      border: 1px solid #e0e0e0;
+      color: #4a6da7;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      background-color: #ffffff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .internal-links a:hover {
+      background-color: #e8f0fe;
+      color: #2c4a7c;
+    }
+
+    @media (max-width: 768px) {
+      .internal-links {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .internal-links {
+        grid-template-columns: 1fr;
+      }
+
+      .internal-links a {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+
+    country-select-wrapper {
+      max-width: 200px;
+      margin: 20px;
+    }
+
+    .country-select {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .country-select:focus {
+      outline: none;
+      border-color: #4a6da7;
+      box-shadow: 0 0 0 2px rgba(74, 109, 167, 0.1);
+    }
+  </style>
 
 <link rel="canonical" href="https://www.calendar-2025.org/sl/calendar-2025-slovenia.html" />
 <link
@@ -532,6 +636,135 @@
                 <div class="legend-item">25 Dec • Božič</div>
                 <div class="legend-item">26 Dec • Dan samostojnosti in enotnosti</div>
             </div>
+
+            <h2>Javni prazniki v Sloveniji v koledarju 2025</h2>
+
+<p>
+  Ko se oziramo na leto 2025, je pomembno poznati ključne javne praznike v slovenskem koledarju. Slovenija praznuje vrsto praznikov skozi celo leto, zato vas spodbudimo, da se pravočasno pripravite za družinska srečanja, kulturne dogodke in počitnice. Spodaj je podroben seznam vseh praznikov v Sloveniji za leto 2025.
+</p>
+
+<h4>1. Novo leto - 1. januar 2025</h4>
+<p>
+  Novo leto označuje začetek novega leta v koledarju 2025. Ljudje v Sloveniji praznujejo z družinskimi srečanji, ognjemeti in veseljem, saj prinaša novo upanje in priložnosti.
+</p>
+
+<h4>2. Prešernov dan - 8. februar 2025</h4>
+<p>
+  Prešernov dan je kulturni praznik, posvečen največjemu slovenskemu pesniku Francetu Prešernu. Ob tej priložnosti se po vsej državi odvijajo literarni in kulturni dogodki, ki poudarjajo bogato slovensko kulturno dediščino.
+</p>
+<img src="../images/calendar-image-1.jpg" alt="image of a desk calendar" />
+<h4>3. Pustni ponedeljek - 3. marec 2025</h4>
+<p>
+  Pustni ponedeljek je del tradicionalnega pustnega obdobja, ko se ljudje veselijo z maskiranjem in karnevalskimi prireditvami. Ta praznik prinaša smeh, zabavo in pričakovanje pomladi.
+</p>
+
+<h4>4. Mednarodni dan žensk - 8. marec 2025</h4>
+<p>
+  Mednarodni dan žensk je namenjen praznovanju dosežkov žensk ter poudarjanju pomena enakopravnosti in pravic žensk. Na ta dan potekajo različni dogodki, ki osvetljujejo vlogo žensk v družbi.
+</p>
+
+<h4>5. Velikonočni ponedeljek - 21. april 2025</h4>
+<p>
+  Velikonočni ponedeljek je verski praznik, ki ga praznujejo kristjani ob upanju in obnovi življenja. V Sloveniji se ta dan obeležuje s cerkvenimi slovesnostmi in družinskimi srečanji.
+</p>
+
+<h4>6. Dan upora proti okupatorju - 27. april 2025</h4>
+<p>
+  Dan upora proti okupatorju spominja na pogum slovenskega naroda med težkimi obdobji okupacije. Gre za dan, ko se častijo spomini na tiste, ki so se borili za svobodo in pravico.
+</p>
+
+<h4>7. Praznik dela - 1. maj 2025</h4>
+<p>
+  Praznik dela je mednarodni praznik, posvečen delu in delavskim pravicam. V Sloveniji se ta dan praznuje s številnimi dogodki, ki poudarjajo pomen solidarnosti in trdega dela.
+</p>
+<img src="../images/calendar-image-2.jpg" alt="image of a desk calendar" />
+<h4>8. Slovenski kulturni dan - 15. maj 2025</h4>
+<p>
+  Slovenski kulturni dan je priložnost za praznovanje slovenske kulture in tradicij. Na ta dan se organizirajo kulturne prireditve, razstave in koncerti, ki združujejo ljudi vseh generacij.
+</p>
+
+<h4>9. Dan državnosti - 25. junij 2025</h4>
+<p>
+  Dan državnosti obeležuje pomemben mejnik v slovenski zgodovini – razglasitev neodvisnosti. Ta dan je poln patriotskih slovesnosti in spominov na pot do svobode, ki so združili narod.
+</p>
+
+<h4>10. Mednarodni dan prijateljstva - 30. julij 2025</h4>
+<p>
+  Mednarodni dan prijateljstva poudarja pomen medsebojnega zaupanja, spoštovanja in prijateljstva med ljudmi. Ta praznik spodbuja povezovanje med različnimi kulturami in skupnostmi.
+</p>
+
+<h4>11. Marijino vnebovzetje - 15. avgust 2025</h4>
+<p>
+  Marijino vnebovzetje je verski praznik, ki ga praznujejo katoličani. Dan simbolizira globoko vero in tradicijo, ki je zakoreninjena v slovenski zgodovini in kulturi.
+</p>
+
+<h4>12. Dan reformacije - 31. oktober 2025</h4>
+<p>
+  Dan reformacije spominja na pomembne spremembe, ki so jih prinesle protestantske reforme. Ta dan poudarja svobodo veroizpovedi in prispeva k razumevanju verske raznolikosti v Sloveniji.
+</p>
+<img src="../images/calendar-image-3.jpg" alt="image of a desk calendar" />
+<h4>13. Dan spomina na mrtve - 1. november 2025</h4>
+<p>
+  Dan spomina na mrtve je čas, ko se obeležuje spomin na preminule. Ta miren dan spodbuja družinsko refleksijo in spoštovanje do tistih, ki so odšli pred nami.
+</p>
+
+<h4>14. Božič - 25. december 2025</h4>
+<p>
+  Božič je krščanski praznik, ki obeležuje rojstvo Jezusa Kristusa. V Sloveniji je to čas družinskih srečanj, obdarovanj in prazničnega vzdušja, ki prinaša toplino v vsak dom.
+</p>
+
+<h4>15. Dan svetega Štefana - 26. december 2025</h4>
+<p>
+  Dan svetega Štefana, znan tudi kot drugi božični dan, je nadaljevanje praznovanja božiča. Ta dan prinaša priložnost za družinska kosila in obujanje tradicionalnih običajev.
+</p>
+
+<div class="internal-links">
+  <a href="../af/calendar-2025-afghanistan.html">تقویم ۲۰۲۵ (افغانستان)</a>
+  <a href="../al/calendar-2025-albania.html">Kalendari 2025 (Shqipëri)</a>
+  <a href="../dz/calendar-2025-algeria.html">تقويم ٢٠٢٥ (الجزائر)</a>
+  <a href="../as/calendar-2025-american-samoa.html">Calendar 2025 (American Samoa)</a>
+  <a href="../ad/calendar-2025-andorra.html">Calendari 2025 (Andorra)</a>
+  <a href="../ao/calendar-2025-angola.html">Calendário 2025 (Angola)</a>
+  <a href="../ai/calendar-2025-anguilla.html">Calendar 2025 (Anguilla)</a>
+  <a href="../ag/calendar-2025-antigua-and-barbuda.html">Calendar 2025 (Antigua and Barbuda)</a>
+  <a href="../ar/calendar-2025-argentina.html">Calendario 2025 (Argentina)</a>
+  <a href="../am/calendar-2025-armenia.html">2025 թվականի օրացույցը (Հայաստան)</a>
+  <a href="../aw/calendar-2025-aruba.html">Kalender 2025 (Aruba)</a>
+  <a href="../au/calendar-2025-australia.html">Calendar 2025 (Australia)</a>
+  <a href="../at/calendar-2025-austria.html">Kalender 2025 (Österreich)</a>
+  <a href="../az/calendar-2025-azerbaijan.html">2025 Təqvimi (Azərbaycan)</a>
+  <a href="../bs/calendar-2025-bahamas.html">Calendar 2025 (Bahamas)</a>
+  <a href="../bh/calendar-2025-bahrain.html">تقويم ٢٠٢٥ (البحرين)</a>
+  <a href="../bd/calendar-2025-bangladesh.html">২০২৫ সালের ক্যালেন্ডার (বাংলাদেশ)</a>
+  <a href="../bg/calendar-2025-bulgaria.html">Календар 2025 (България)</a>
+  <a href="../ca/calendar-2025-canada.html">Calendar 2025 (Canada)</a>
+  <a href="../cn/calendar-2025-china.html">2025 年历 (中国)</a>
+  <a href="../cz/calendar-2025-Czechia.html">Kalendář 2025 (Česko)</a>
+  <a href="../dk/calendar-2025-denmark.html">Kalender 2025 (Danmark)</a>
+  <a href="../ee/calendar-2025-estonia.html">Kalender 2025 (Eesti)</a>
+  <a href="../fi/calendar-2025-finland.html">Kalenteri 2025 (Suomi)</a>
+</div>
+
+<footer>
+  <div>
+    <p>&copy; calendar-2025.org</p>
+    <nav>
+      <ul>
+        <li><a href="../about-us.html">About</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../contact-us.html">Contact</a></li>
+        <li><a href="../login.html">Login</a></li>
+        <li><a href="../api-docs.html">API</a></li>
+        <li><a href="../api-status.html">API status</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+        <li>
+          <a href="../terms-and-conditions.html">Terms of Service</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
         </div>
         <div class="ad-space">
             <div style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; border: 2px dashed #999; text-align: center;">
